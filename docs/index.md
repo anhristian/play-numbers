@@ -39,3 +39,8 @@ will say back to the child the number he selected, and will give short encouragi
 
    * Google Sign In - this service will be used for opening the app. The parent-user will be asked to provide his or her email.
    * Device's speaker - this will be used to reproduce the voice that will guide the child on his or her activities.
+   
+   * [Text-to-Speech](https://android-developers.googleblog.com/2009/09/introduction-to-text-to-speech-in.html)
+   * [Device's speaker](https://developer.android.com/training/wearables/wearable-sounds)
+   * [Google Sign In](https://developers.google.com/identity/sign-in/android/start-integrating)
+   * [Google Sign In](https://developers.google.com/identity/sign-in/android/sign-in)
