@@ -41,13 +41,16 @@ say back to the child the number he selected, and gives short encouraging expres
    
       The user will have the choice to provide his or her email, which will help to record the child's progress on the activities.
       Otherwise, the user could skip it, but this will result in no saving the data from the progress.
+      The app doesn't require the Google Sing In for its functionality. 
+      
         * [Google Sign In](https://developers.google.com/identity/sign-in/android/sign-in)
         
    * **_Device's speaker_** 
    
-        This will be used by the app to reproduce the voice that will guide the child on his or her activities. 
-        By the desire, the user will have the choice to mute the sound. 
-    
+       This will be used to add short voiced clips in the app for reproducing the voice that will guide the child on his or her activities. 
+       By the desire, the user will have the choice to mute the sound. 
+       The app doesn't require the Media player for its functionality. 
+       
         * [Media player](https://developer.android.com/guide/topics/media/mediaplayer)
         
   
