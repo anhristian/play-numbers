@@ -41,7 +41,7 @@ say back to the child the number he selected, and gives short encouraging expres
    
       The user will have the choice to provide his or her email, which will help to record the child's progress on the activities.
       Otherwise, the user could skip it, but this will result in no saving the data from the progress.
-      The app doesn't require the Google Sing In for its functionality. 
+      The app doesn't require the Google Sign In for its functionality. 
       
         * [Google Sign In](https://developers.google.com/identity/sign-in/android/sign-in)
         
