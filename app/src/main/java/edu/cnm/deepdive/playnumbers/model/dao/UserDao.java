@@ -20,7 +20,7 @@ public interface UserDao {
   Single<Long> insert(User user);
 
   @Insert(onConflict = OnConflictStrategy.IGNORE)
-  Single<List<Long>> insert(User... user);
+  Single<List<Long>> insert(User... users);
 
   @Insert(onConflict = OnConflictStrategy.IGNORE)
   Single<List<Long>> insert(Collection<User> users);
