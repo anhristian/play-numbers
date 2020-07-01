@@ -8,7 +8,6 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
 import edu.cnm.deepdive.playnumbers.model.entity.Activity;
-import edu.cnm.deepdive.playnumbers.model.entity.User;
 import io.reactivex.Single;
 import java.util.Collection;
 import java.util.List;
@@ -35,4 +34,4 @@ public interface ActivityDao {
   @Query("SELECT * FROM User ORDER BY name")
   LiveData<List<Activity>> selectAll();
 
-}
+}// TODO Define pojo (user with progress, activity with progress).

@@ -7,6 +7,7 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 import edu.cnm.deepdive.playnumbers.model.dao.ActivityDao;
+import edu.cnm.deepdive.playnumbers.model.dao.ProgressDao;
 import edu.cnm.deepdive.playnumbers.model.dao.UserDao;
 import edu.cnm.deepdive.playnumbers.model.entity.Activity;
 import edu.cnm.deepdive.playnumbers.model.entity.Progress;
@@ -33,6 +34,8 @@ public abstract class PlayNumbersDatabase extends RoomDatabase {
   public abstract UserDao getUserDao();
 
   public abstract ActivityDao getActivityDao();
+
+  public abstract ProgressDao getProgressDao();
 
   public static PlayNumbersDatabase getInstance() {
   return InstanceHolder.INSTANCE;
