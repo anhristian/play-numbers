@@ -6,8 +6,10 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+import androidx.room.Transaction;
 import androidx.room.Update;
 import edu.cnm.deepdive.playnumbers.model.entity.Activity;
+import edu.cnm.deepdive.playnumbers.model.pojo.ActivityWithProgress;
 import io.reactivex.Single;
 import java.util.Collection;
 import java.util.List;
@@ -31,7 +33,17 @@ public interface ActivityDao {
   @Delete
   Single<Integer> delete(Activity... activities);
 
-  @Query("SELECT * FROM User ORDER BY name")
-  LiveData<List<Activity>> selectAll();
 
-}// TODO Define pojo (user with progress, activity with progress).
+  @Transaction
+  @Query("SELECT * FROM Activity ORDER BY name")
+  LiveData<List<ActivityWithProgress>> selectAll();
+
+  //TODO Add the query single list activity.
+
+  @Transaction
+  @Query("SELECT * FROM Activity WHERE activity_id = :activityId")
+  Single<ActivityWithProgress> selectedById(long activityId);
+
+
+
+}

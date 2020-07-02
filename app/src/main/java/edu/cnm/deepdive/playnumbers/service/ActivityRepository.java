@@ -5,7 +5,9 @@ import androidx.lifecycle.LiveData;
 import edu.cnm.deepdive.playnumbers.model.dao.ActivityDao;
 import edu.cnm.deepdive.playnumbers.model.dao.ProgressDao;
 import edu.cnm.deepdive.playnumbers.model.entity.Activity;
+import edu.cnm.deepdive.playnumbers.model.pojo.ActivityWithProgress;
 import io.reactivex.Completable;
+import io.reactivex.Single;
 import io.reactivex.schedulers.Schedulers;
 import java.util.List;
 
@@ -23,8 +25,12 @@ public class ActivityRepository {
     progressDao = database.getProgressDao();
   }
 
-  public LiveData<List<Activity>> getAll() {
+  public LiveData<List<ActivityWithProgress>> getAll() {
     return activityDao.selectAll();
+  }
+  public Single<ActivityWithProgress> get(long id) {
+    return activityDao.selectedById(id)
+        .subscribeOn(Schedulers.io());
   }
 
   public Completable save(Activity activity) {

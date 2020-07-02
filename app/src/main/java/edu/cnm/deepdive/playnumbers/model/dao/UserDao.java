@@ -6,8 +6,11 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+import androidx.room.Transaction;
 import androidx.room.Update;
 import edu.cnm.deepdive.playnumbers.model.entity.User;
+import edu.cnm.deepdive.playnumbers.model.pojo.ActivityWithProgress;
+import edu.cnm.deepdive.playnumbers.model.pojo.UserWithProgress;
 import io.reactivex.Single;
 import java.util.Collection;
 import java.util.List;
@@ -34,4 +37,11 @@ public interface UserDao {
   @Query("SELECT * FROM User ORDER BY name")
   LiveData<List<User>> selectAll();
 
+  @Transaction
+  @Query("SELECT * FROM User ORDER BY name")
+  LiveData<List<UserWithProgress>> selectAllWithProgress();
+
+  @Transaction
+  @Query("SELECT * FROM User WHERE user_id = :userId")
+  Single<UserWithProgress> selectedById(long userId);
 }
