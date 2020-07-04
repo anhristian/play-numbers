@@ -22,7 +22,8 @@ public class Activity {
   @NonNull
   private String name;
 
-  private Integer level;
+
+  private int level;
 
   public long getId() {
     return id;
@@ -41,11 +42,11 @@ public class Activity {
     this.name = name;
   }
 
-  public Integer getLevel() {
+  public int getLevel() {
     return level;
   }
 
-  public void setLevel(Integer level) {
+  public void setLevel(int level) {
     this.level = level;
   }
 }

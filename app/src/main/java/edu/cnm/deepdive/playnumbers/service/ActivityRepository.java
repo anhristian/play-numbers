@@ -16,7 +16,7 @@ public class ActivityRepository {
   private final Context context;
   private final PlayNumbersDatabase database;
   private final ActivityDao activityDao;
-  private final ProgressDao progressDao;//TODO To add the Progress in the activity.
+  private final ProgressDao progressDao;
 
   public ActivityRepository(Context context) {
     this.context = context;
@@ -31,6 +31,8 @@ public class ActivityRepository {
   public Single<ActivityWithProgress> get(long id) {
     return activityDao.selectedById(id)
         .subscribeOn(Schedulers.io());
+
+
   }
 
   public Completable save(Activity activity) {

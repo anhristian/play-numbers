@@ -32,7 +32,7 @@ public interface ProgressDao {
   @Delete
   Single<Integer> delete(Progress... progresses);
 
-  @Query("SELECT * FROM Progress ORDER BY progress_id") ///not sure this is the right ordered by
+  @Query("SELECT * FROM Progress ORDER BY start")
   LiveData<List<Progress>> selectAll();
 
   @Query("SELECT * FROM Progress WHERE activity_id = :activityId")
