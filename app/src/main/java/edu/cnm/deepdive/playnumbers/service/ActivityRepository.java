@@ -48,6 +48,7 @@ public class ActivityRepository {
   }
   public Completable delete(Activity activity) {
     if (activity.getId() == 0) {
+      //the completable doesn't do anything.
       return Completable.fromAction(() -> {})
           .subscribeOn(Schedulers.io());
     } else {
