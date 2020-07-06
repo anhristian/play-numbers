@@ -60,7 +60,7 @@ public abstract class PlayNumbersDatabase extends RoomDatabase {
     @Override
     public void onCreate(@NonNull SupportSQLiteDatabase db) {
       super.onCreate(db);
-      // TODO Create a map from file contents.
+      // TODO Create a map from file contents. raw resource
       // TODO Persist map contents to database.
     }
   }

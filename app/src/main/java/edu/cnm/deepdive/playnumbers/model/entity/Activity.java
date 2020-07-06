@@ -22,6 +22,8 @@ public class Activity {
   @NonNull
   private String name;
 
+  private String className;
+
 
   private int level;
 
@@ -48,5 +50,13 @@ public class Activity {
 
   public void setLevel(int level) {
     this.level = level;
+  }
+
+  public String getClassName() {
+    return className;
+  }
+
+  public void setClassName(String className) {
+    this.className = className;
   }
 }

@@ -59,7 +59,7 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
     );
   }
 
-   public void saveActivity(Activity activity) {
+   public void saveActivity(ActivityWithProgress activity) {
      throwable.setValue(null);
      pending.add(
          activityRepository.save(activity)

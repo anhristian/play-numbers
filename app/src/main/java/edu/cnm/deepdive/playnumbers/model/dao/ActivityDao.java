@@ -38,12 +38,8 @@ public interface ActivityDao {
   @Query("SELECT * FROM Activity ORDER BY name")
   LiveData<List<ActivityWithProgress>> selectAll();
 
-  //TODO Add the query single list activity.
-
   @Transaction
   @Query("SELECT * FROM Activity WHERE activity_id = :activityId")
   Single<ActivityWithProgress> selectedById(long activityId);
-
-
 
 }
