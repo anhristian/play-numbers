@@ -1,6 +1,3 @@
-## Data Definition Language (DDL)
-
-```sqlite
 CREATE TABLE IF NOT EXISTS `User`
 (
     `user_id`   INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
@@ -36,18 +33,5 @@ CREATE TABLE IF NOT EXISTS `Progress`
 CREATE INDEX IF NOT EXISTS `index_Progress_activity_id` ON `Progress` (`activity_id`);
 
 CREATE INDEX IF NOT EXISTS `index_Progress_user_id` ON `Progress` (`user_id`);
-```
-
-[`ddl.sql`](sql/ddl.sql)
-
-
-
-
-
-
-
-
-
-
 
 
