@@ -61,7 +61,7 @@ say back to the child the number he selected, and gives short encouraging expres
 
 ###### [Repository classes and Database class](https://github.com/anhristian/play-numbers/tree/master/app/src/main/java/edu/cnm/deepdive/playnumbers/service)
 
-######[Data Definition Language (DDL)](https://github.com/anhristian/play-numbers/blob/master/docs/ddl.md)        
+###### [Data Definition Language (DDL)](https://github.com/anhristian/play-numbers/blob/master/docs/ddl.md)        
   
-######[MainViewModel class](https://github.com/anhristian/play-numbers/tree/master/app/src/main/java/edu/cnm/deepdive/playnumbers/viewmodel)
+###### [MainViewModel class](https://github.com/anhristian/play-numbers/tree/master/app/src/main/java/edu/cnm/deepdive/playnumbers/viewmodel)
    
