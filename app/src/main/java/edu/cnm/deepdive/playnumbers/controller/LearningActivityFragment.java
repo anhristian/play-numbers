@@ -4,5 +4,5 @@ import androidx.fragment.app.Fragment;
 
 public abstract class LearningActivityFragment extends Fragment {
 
-  //TODO Declare methods that can be invoked to check if lernAct was complited and when .
+  //TODO Declare methods that can be invoked to check if LearningActivity was completed and when was completed.
 }

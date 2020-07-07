@@ -53,5 +53,15 @@ say back to the child the number he selected, and gives short encouraging expres
        
         * [Media player](https://developer.android.com/guide/topics/media/mediaplayer)
         
+###### [Entity classes](https://github.com/anhristian/play-numbers/tree/master/app/src/main/java/edu/cnm/deepdive/playnumbers/model/entity)
+
+###### [DAO interfaces](https://github.com/anhristian/play-numbers/tree/master/app/src/main/java/edu/cnm/deepdive/playnumbers/model/dao)
+
+###### [POJO classes](https://github.com/anhristian/play-numbers/tree/master/app/src/main/java/edu/cnm/deepdive/playnumbers/model/pojo)
+
+###### [Repository classes and Database class](https://github.com/anhristian/play-numbers/tree/master/app/src/main/java/edu/cnm/deepdive/playnumbers/service)
+
+######[Data Definition Language (DDL)](https://github.com/anhristian/play-numbers/blob/master/docs/ddl.md)        
   
+######[MainViewModel class](https://github.com/anhristian/play-numbers/tree/master/app/src/main/java/edu/cnm/deepdive/playnumbers/viewmodel)
    

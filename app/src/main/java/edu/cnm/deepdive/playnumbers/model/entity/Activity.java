@@ -22,8 +22,9 @@ public class Activity {
   @NonNull
   private String name;
 
+  @NonNull
+  @ColumnInfo(name = "class_name")
   private String className;
-
 
   private int level;
 
@@ -52,11 +53,12 @@ public class Activity {
     this.level = level;
   }
 
+  @NonNull
   public String getClassName() {
     return className;
   }
 
-  public void setClassName(String className) {
+  public void setClassName(@NonNull String className) {
     this.className = className;
   }
 }
