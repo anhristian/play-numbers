@@ -12,6 +12,7 @@ CREATE TABLE IF NOT EXISTS `Activity`
 (
     `activity_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
     `name`        TEXT                              NOT NULL,
+    `class_name`  TEXT                              NOT NULL,
     `level`       INTEGER                           NOT NULL
 );
 

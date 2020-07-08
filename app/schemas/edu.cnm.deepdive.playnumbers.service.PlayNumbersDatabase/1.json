@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "a8742aa348e41e1efb948e5dd0d22a03",
+    "identityHash": "2b3920ba04892b0695799fadcab80f80",
     "entities": [
       {
         "tableName": "User",
@@ -54,7 +54,7 @@
       },
       {
         "tableName": "Activity",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`activity_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT NOT NULL, `className` TEXT, `level` INTEGER NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`activity_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT NOT NULL, `class_name` TEXT NOT NULL, `level` INTEGER NOT NULL)",
         "fields": [
           {
             "fieldPath": "id",
@@ -70,9 +70,9 @@
           },
           {
             "fieldPath": "className",
-            "columnName": "className",
+            "columnName": "class_name",
             "affinity": "TEXT",
-            "notNull": false
+            "notNull": true
           },
           {
             "fieldPath": "level",
@@ -195,7 +195,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'a8742aa348e41e1efb948e5dd0d22a03')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '2b3920ba04892b0695799fadcab80f80')"
     ]
   }
 }

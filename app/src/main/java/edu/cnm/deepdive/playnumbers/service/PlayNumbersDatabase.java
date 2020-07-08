@@ -15,10 +15,7 @@ import edu.cnm.deepdive.playnumbers.model.entity.Activity;
 import edu.cnm.deepdive.playnumbers.model.entity.Progress;
 import edu.cnm.deepdive.playnumbers.model.entity.User;
 import edu.cnm.deepdive.playnumbers.service.PlayNumbersDatabase.Converters;
-import java.io.IOException;
 import java.util.Date;
-import java.util.List;
-import java.util.Map;
 
 @Database(
     entities = {User.class, Activity.class, Progress.class},

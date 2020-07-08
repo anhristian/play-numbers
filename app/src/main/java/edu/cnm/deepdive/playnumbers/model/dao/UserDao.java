@@ -9,7 +9,6 @@ import androidx.room.Query;
 import androidx.room.Transaction;
 import androidx.room.Update;
 import edu.cnm.deepdive.playnumbers.model.entity.User;
-import edu.cnm.deepdive.playnumbers.model.pojo.ActivityWithProgress;
 import edu.cnm.deepdive.playnumbers.model.pojo.UserWithProgress;
 import io.reactivex.Single;
 import java.util.Collection;
