@@ -12,6 +12,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.fragment.NavHostFragment;
 import edu.cnm.deepdive.playnumbers.R;
+import edu.cnm.deepdive.playnumbers.controller.ui.home.HomeFragmentDirections.ActionHomeFragmentToHomeSecondFragment;
 
 
 public class HomeFragment extends Fragment {
@@ -40,7 +41,7 @@ public class HomeFragment extends Fragment {
     view.findViewById(R.id.button_home).setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-        HomeFragmentDirections.ActionHomeFragmentToHomeSecondFragment action =
+        ActionHomeFragmentToHomeSecondFragment action =
             HomeFragmentDirections.actionHomeFragmentToHomeSecondFragment
                 ("From HomeFragment");
         NavHostFragment.findNavController(HomeFragment.this)
