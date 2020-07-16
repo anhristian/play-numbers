@@ -1,5 +1,8 @@
 package edu.cnm.deepdive.playnumbers.controller;
 
+import static edu.cnm.deepdive.playnumbers.model.entity.Activity.Type.MATCHING;
+import static edu.cnm.deepdive.playnumbers.model.entity.Activity.Type.MISSING;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -17,9 +20,11 @@ import edu.cnm.deepdive.playnumbers.R;
 import edu.cnm.deepdive.playnumbers.service.GoogleSignInService;
 import edu.cnm.deepdive.playnumbers.viewmodel.MainViewModel;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+    implements BottomNavigationView.OnNavigationItemSelectedListener {
 
   private GoogleSignInService signInService;
+  private NavController navController;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -53,11 +58,12 @@ public class MainActivity extends AppCompatActivity {
     // Passing each menu ID as a set of Ids because each
     // menu should be considered as top level destinations.
     AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-        R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
+        R.id.navigation_home, R.id.navigation_activities, R.id.navigation_matching, R.id.navigation_missing)
         .build();
-    NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+    navController = Navigation.findNavController(this, R.id.nav_host_fragment);
     NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-    NavigationUI.setupWithNavController(navView, navController);
+    // NavigationUI.setupWithNavController(navView, navController);
+    navView.setOnNavigationItemSelectedListener(this);
   }
   private void setupObservers() {
     MainViewModel viewModel = new ViewModelProvider(this).get(MainViewModel.class);
@@ -75,5 +81,27 @@ public class MainActivity extends AppCompatActivity {
     Intent intent = new Intent(this, LoginActivity.class);
     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
     startActivity(intent);
+  }
+
+  @Override
+  public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+    boolean handled  = true;
+    Bundle args = new Bundle();
+    switch (item.getItemId()) {
+      case R.id.navigation_matching:
+        args.putSerializable(LearningActivityFragment.TYPE_KEY, MATCHING);
+        navController.navigate(R.id.navigation_activities, args);
+        break;
+      case R.id.navigation_missing:
+        args.putSerializable(LearningActivityFragment.TYPE_KEY, MISSING);
+        navController.navigate(R.id.navigation_activities, args);
+        break;
+      case R.id.navigation_home:
+        navController.navigate(R.id.navigation_home);
+        break;
+      default:
+        handled = false;
+    }
+    return handled;
   }
 }

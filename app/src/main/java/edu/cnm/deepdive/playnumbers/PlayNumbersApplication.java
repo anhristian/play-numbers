@@ -12,6 +12,7 @@ public class PlayNumbersApplication extends Application {
   public void onCreate() {
     super.onCreate();
     GoogleSignInService.setContext(this);
+
     PlayNumbersDatabase.setContext(this);
     PlayNumbersDatabase database = PlayNumbersDatabase.getInstance();
     database.getUserDao().delete()

@@ -22,7 +22,7 @@ import java.util.Date;
     version = 1,
     exportSchema = true
 )
-@TypeConverters({Converters.class})
+@TypeConverters({Converters.class, Activity.Type.class})
 public abstract class PlayNumbersDatabase extends RoomDatabase {
 
   private static final String DB_NAME = "play_numbers_db";

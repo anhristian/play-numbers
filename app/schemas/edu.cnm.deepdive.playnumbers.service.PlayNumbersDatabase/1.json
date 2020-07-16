@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "2b3920ba04892b0695799fadcab80f80",
+    "identityHash": "f61ad141989ac070f2d8114f4db23a4f",
     "entities": [
       {
         "tableName": "User",
@@ -54,7 +54,7 @@
       },
       {
         "tableName": "Activity",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`activity_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT NOT NULL, `class_name` TEXT NOT NULL, `level` INTEGER NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`activity_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT NOT NULL, `class_name` TEXT NOT NULL, `level` INTEGER NOT NULL, `type` INTEGER NOT NULL)",
         "fields": [
           {
             "fieldPath": "id",
@@ -77,6 +77,12 @@
           {
             "fieldPath": "level",
             "columnName": "level",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "type",
+            "columnName": "type",
             "affinity": "INTEGER",
             "notNull": true
           }
@@ -103,6 +109,14 @@
               "level"
             ],
             "createSql": "CREATE INDEX IF NOT EXISTS `index_Activity_level` ON `${TABLE_NAME}` (`level`)"
+          },
+          {
+            "name": "index_Activity_type",
+            "unique": false,
+            "columnNames": [
+              "type"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_Activity_type` ON `${TABLE_NAME}` (`type`)"
           }
         ],
         "foreignKeys": []
@@ -195,7 +209,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '2b3920ba04892b0695799fadcab80f80')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'f61ad141989ac070f2d8114f4db23a4f')"
     ]
   }
 }

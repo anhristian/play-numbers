@@ -13,6 +13,7 @@ public class LoginActivity extends AppCompatActivity {
   private static final int LOGIN_REQUEST_CODE = 1000;
 
   private GoogleSignInService service;
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);

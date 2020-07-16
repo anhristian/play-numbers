@@ -12,7 +12,6 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.fragment.NavHostFragment;
 import edu.cnm.deepdive.playnumbers.R;
-import edu.cnm.deepdive.playnumbers.controller.ui.home.HomeFragmentDirections.ActionHomeFragmentToHomeSecondFragment;
 
 
 public class HomeFragment extends Fragment {
@@ -24,13 +23,6 @@ public class HomeFragment extends Fragment {
     homeViewModel =
         ViewModelProviders.of(this).get(HomeViewModel.class);
     View root = inflater.inflate(R.layout.fragment_home, container, false);
-    final TextView textView = root.findViewById(R.id.text_home);
-    homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-      @Override
-      public void onChanged(@Nullable String s) {
-        textView.setText(s);
-      }
-    });
     return root;
   }
 
@@ -38,15 +30,5 @@ public class HomeFragment extends Fragment {
   public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
 
-    view.findViewById(R.id.button_home).setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View view) {
-        ActionHomeFragmentToHomeSecondFragment action =
-            HomeFragmentDirections.actionHomeFragmentToHomeSecondFragment
-                ("From HomeFragment");
-        NavHostFragment.findNavController(HomeFragment.this)
-            .navigate(action);
-      }
-    });
   }
 }
