@@ -16,7 +16,7 @@
 
 
   <!-- TODO: Remove or change this placeholder text -->
-  <string name="hello_blank_fragment">Hello blank fragment</string>
+  <string name="choose_the_activity">Choose the activity</string>
   <string name="learning_activities">Learning Activities</string>
   <string name="what_do_you_want_to_play">What do you want to play?</string>
   <string name="play_and_learn_numbers">Play and Learn Numbers</string>
