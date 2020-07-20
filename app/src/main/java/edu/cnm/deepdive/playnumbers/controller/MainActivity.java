@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
@@ -28,6 +30,8 @@ public class MainActivity extends AppCompatActivity
   private GoogleSignInService signInService;
   private NavController navController;
 
+ /* private Button buttonActivityOne;*/
+
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +39,14 @@ public class MainActivity extends AppCompatActivity
     setContentView(R.layout.activity_main);
     setupNavigation();
     setupObservers();
+
+    /*buttonActivityOne = findViewById(R.id.activity_one);
+    buttonActivityOne.setOnClickListener(v -> openActivityOne());*/
   }
+/*  public void openActivityOne() {
+    Intent intent = new Intent(this, LearningActivityFragment.class);
+    startActivity(intent);
+  }*/
 
   @Override
   public boolean onCreateOptionsMenu(Menu menu) {
