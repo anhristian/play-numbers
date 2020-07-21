@@ -12,9 +12,11 @@ import edu.cnm.deepdive.playnumbers.model.dao.ActivityDao;
 import edu.cnm.deepdive.playnumbers.model.dao.ProgressDao;
 import edu.cnm.deepdive.playnumbers.model.dao.UserDao;
 import edu.cnm.deepdive.playnumbers.model.entity.Activity;
+import edu.cnm.deepdive.playnumbers.model.entity.Activity.Type;
 import edu.cnm.deepdive.playnumbers.model.entity.Progress;
 import edu.cnm.deepdive.playnumbers.model.entity.User;
 import edu.cnm.deepdive.playnumbers.service.PlayNumbersDatabase.Converters;
+import io.reactivex.schedulers.Schedulers;
 import java.util.Date;
 
 @Database(
@@ -57,8 +59,15 @@ public abstract class PlayNumbersDatabase extends RoomDatabase {
     @Override
     public void onCreate(@NonNull SupportSQLiteDatabase db) {
       super.onCreate(db);
-      // TODO Create a map from file contents. raw resource
-      // TODO Persist map contents to database.
+      Activity activity = new Activity();
+      activity.setClassName("edu.cnm.deepdive.playnumbers.controller.MatchingFragment");
+      activity.setType(Type.MATCHING);
+      activity.setLevel(1);
+      activity.setName("Match number with its image");
+      PlayNumbersDatabase.getInstance().getActivityDao().insert(activity)
+          .subscribeOn(Schedulers.io())
+          .subscribe(); //put in db   the racgment with numbers takling to a view model
+
     }
   }
 

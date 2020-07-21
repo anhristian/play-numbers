@@ -42,4 +42,11 @@ public interface ActivityDao {
   @Query("SELECT * FROM Activity WHERE activity_id = :activityId")
   Single<ActivityWithProgress> selectedById(long activityId);
 
+  //todo live data list activity for specified tupe all activity all for type
+  //names of activity to displat
+/*
+  @Query("SELECT * FROM Activity ORDER BY type")
+  LiveData<List<>>
+*/
+
 }

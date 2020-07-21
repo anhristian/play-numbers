@@ -11,19 +11,20 @@
     android:supportsRtl="true"
     android:theme="@style/AppTheme">
     <activity android:name=".controller.LoginActivity">
-
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
 
         <category android:name="android.intent.category.LAUNCHER"/>
       </intent-filter>
-
-
     </activity>
+
     <activity
       android:label="@string/title_activity_main"
       android:name=".controller.MainActivity">
     </activity>
+
+    <activity
+      android:name=".controller.MatchingNumberActivityOne"/>
   </application>
 
 </manifest>

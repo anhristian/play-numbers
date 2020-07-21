@@ -16,15 +16,15 @@
  <fragment
    android:id="@+id/navigation_activities"
    android:label="@string/learning_activities"
-   android:name="edu.cnm.deepdive.playnumbers.controller.LearningActivityFragment"
-   tools:layout="@layout/fragment_learning_activity"
+   android:name="edu.cnm.deepdive.playnumbers.controller.LearningActivitiesFragment"
+   tools:layout="@layout/fragment_learning_activities"
    />
 
 
   <fragment
     android:id="@+id/navigation_matching"
     android:label="@string/title_matching"
-    android:name="edu.cnm.deepdive.playnumbers.controller.ui.dashboard.MatchingFragment"
+    android:name="edu.cnm.deepdive.playnumbers.controller.MatchingFragment"
     tools:layout="@layout/fragment_matching"/>
 
 

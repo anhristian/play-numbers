@@ -7,9 +7,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModelProvider;
@@ -20,7 +17,6 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import edu.cnm.deepdive.playnumbers.R;
-import edu.cnm.deepdive.playnumbers.controller.ui.dashboard.MatchingFragment;
 import edu.cnm.deepdive.playnumbers.service.GoogleSignInService;
 import edu.cnm.deepdive.playnumbers.viewmodel.MainViewModel;
 
@@ -40,13 +36,16 @@ public class MainActivity extends AppCompatActivity
     setupNavigation();
     setupObservers();
 
-    /*buttonActivityOne = findViewById(R.id.activity_one);
-    buttonActivityOne.setOnClickListener(v -> openActivityOne());*/
+   /* Button buttonActivityOne = (Button) findViewById(R.id.activity_one);
+    buttonActivityOne.setOnClickListener((v) -> {
+
+      Intent intent = new Intent
+          (MainActivity.this, MatchingNumberActivityOne.class);
+      startActivity(intent);
+    });*/
+
   }
-/*  public void openActivityOne() {
-    Intent intent = new Intent(this, LearningActivityFragment.class);
-    startActivity(intent);
-  }*/
+
 
   @Override
   public boolean onCreateOptionsMenu(Menu menu) {
@@ -103,11 +102,11 @@ public class MainActivity extends AppCompatActivity
     Bundle args = new Bundle();
     switch (item.getItemId()) {
       case R.id.navigation_matching:
-        args.putSerializable(LearningActivityFragment.TYPE_KEY, MATCHING);
+        args.putSerializable(LearningActivitiesFragment.TYPE_KEY, MATCHING);
         navController.navigate(R.id.navigation_activities, args);
         break;
       case R.id.navigation_missing:
-        args.putSerializable(LearningActivityFragment.TYPE_KEY, MISSING);
+        args.putSerializable(LearningActivitiesFragment.TYPE_KEY, MISSING);
         navController.navigate(R.id.navigation_activities, args);
         break;
       case R.id.navigation_home:
