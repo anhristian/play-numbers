@@ -18,7 +18,7 @@ public class MatchingFragment extends LearningActivityFragment {
   @Override
   public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
       @Nullable Bundle savedInstanceState) {
-    //TODO DO any additional proccess to set this.
+    //TODO DO any additional process to set this.
     return super.onCreateView(inflater, container, savedInstanceState);
   }
 

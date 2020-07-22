@@ -39,7 +39,7 @@ public class ActivityRepository {
 
   }
   public LiveData<List<ActivityWithProgress>> getType(Type type) { //!!!!!!!!!!!!!!!!!!!!!!
-    return activityDao.selectedByType(type);
+    return activityDao.selectedByType();
   }
 
   @Transaction

@@ -45,6 +45,6 @@ public interface ActivityDao {
 
 
   @Query("SELECT * FROM Activity ORDER BY type")
-  LiveData<List<ActivityWithProgress>> selectedByType(Type type); // !!!!!!!!!!!!gives the activities by specific type
+  LiveData<List<ActivityWithProgress>> selectedByType(); // !!!!!!!!!!!!gives the activities by specific type
 
 }
