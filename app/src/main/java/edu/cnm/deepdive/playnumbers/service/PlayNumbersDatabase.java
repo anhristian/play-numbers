@@ -63,10 +63,10 @@ public abstract class PlayNumbersDatabase extends RoomDatabase {
       activity.setClassName("edu.cnm.deepdive.playnumbers.controller.MatchingFragment");
       activity.setType(Type.MATCHING);
       activity.setLevel(1);
-      activity.setName("Match number with its image");
+      activity.setName("Match the number with the right image");
       PlayNumbersDatabase.getInstance().getActivityDao().insert(activity)
           .subscribeOn(Schedulers.io())
-          .subscribe(); //put in db   the racgment with numbers takling to a view model
+          .subscribe(); //put in db   the fragment with numbers. talking to a view model
 
     }
   }

@@ -6,6 +6,7 @@ import androidx.room.Transaction;
 import edu.cnm.deepdive.playnumbers.model.dao.ActivityDao;
 import edu.cnm.deepdive.playnumbers.model.dao.ProgressDao;
 import edu.cnm.deepdive.playnumbers.model.entity.Activity;
+import edu.cnm.deepdive.playnumbers.model.entity.Activity.Type;
 import edu.cnm.deepdive.playnumbers.model.entity.Progress;
 import edu.cnm.deepdive.playnumbers.model.pojo.ActivityWithProgress;
 import io.reactivex.Completable;
@@ -36,6 +37,9 @@ public class ActivityRepository {
     return activityDao.selectedById(id)
         .subscribeOn(Schedulers.io());
 
+  }
+  public LiveData<List<ActivityWithProgress>> getType(Type type) { //!!!!!!!!!!!!!!!!!!!!!!
+    return activityDao.selectedByType(type);
   }
 
   @Transaction

@@ -27,7 +27,7 @@ public class Activity {
 
   @NonNull
   @ColumnInfo(name = "class_name")
-  private String className;
+  private String className;  //type activity
 
   private int level;
 

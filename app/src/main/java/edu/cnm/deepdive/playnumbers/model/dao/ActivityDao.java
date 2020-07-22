@@ -9,6 +9,7 @@ import androidx.room.Query;
 import androidx.room.Transaction;
 import androidx.room.Update;
 import edu.cnm.deepdive.playnumbers.model.entity.Activity;
+import edu.cnm.deepdive.playnumbers.model.entity.Activity.Type;
 import edu.cnm.deepdive.playnumbers.model.pojo.ActivityWithProgress;
 import io.reactivex.Single;
 import java.util.Collection;
@@ -42,11 +43,8 @@ public interface ActivityDao {
   @Query("SELECT * FROM Activity WHERE activity_id = :activityId")
   Single<ActivityWithProgress> selectedById(long activityId);
 
-  //todo live data list activity for specified tupe all activity all for type
-  //names of activity to displat
-/*
+
   @Query("SELECT * FROM Activity ORDER BY type")
-  LiveData<List<>>
-*/
+  LiveData<List<ActivityWithProgress>> selectedByType(Type type); // !!!!!!!!!!!!gives the activities by specific type
 
 }

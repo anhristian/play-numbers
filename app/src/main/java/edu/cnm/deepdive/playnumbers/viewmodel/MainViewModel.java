@@ -9,6 +9,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.OnLifecycleEvent;
 import edu.cnm.deepdive.playnumbers.model.entity.Activity;
+import edu.cnm.deepdive.playnumbers.model.entity.Activity.Type;
 import edu.cnm.deepdive.playnumbers.model.entity.User;
 import edu.cnm.deepdive.playnumbers.model.pojo.ActivityWithProgress;
 import edu.cnm.deepdive.playnumbers.service.ActivityRepository;
@@ -23,6 +24,7 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
   private final MutableLiveData<Throwable> throwable;
   private final CompositeDisposable pending;
   private final MutableLiveData<ActivityWithProgress> activity;
+  private final MutableLiveData<ActivityWithProgress> type;
 
 
   public MainViewModel(@NonNull Application application) {
@@ -32,6 +34,7 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
     throwable = new MutableLiveData<>();
     pending = new CompositeDisposable();
     activity = new MutableLiveData<>();
+    type = new MutableLiveData<>();
 
   }
 
@@ -45,6 +48,11 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
 
   public LiveData<Throwable> getThrowable() {
     return throwable;
+  }
+
+  public LiveData<ActivityWithProgress> getType(){ //!!!!!!!!!!!!!!
+    return type;
+
   }
 
   public void setActivityId(long id) {

@@ -23,8 +23,6 @@
       android:name=".controller.MainActivity">
     </activity>
 
-    <activity
-      android:name=".controller.MatchingNumberActivityOne"/>
   </application>
 
 </manifest>

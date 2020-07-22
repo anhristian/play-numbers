@@ -12,7 +12,7 @@ public class LearningActivitiesFragment extends Fragment {
 
   public static final String TYPE_KEY = "type";
 
- /* private Button buttonActivityOne;*/
+//TODO add the field MainViewModel
 
   private Type type;
 
@@ -35,11 +35,19 @@ public class LearningActivitiesFragment extends Fragment {
 
     }
 
+    /* Button buttonActivityOne = (Button) findViewById(R.id.activity_one);
+    buttonActivityOne.setOnClickListener((v) -> {
+
+      Intent intent = new Intent
+          (MainActivity.this, MatchingNumberActivityOne.class);
+      startActivity(intent);
+    });*/
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
         Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_learning_activities, container, false);
     }
-
+//TODO Add the viewModel
 }
