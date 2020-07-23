@@ -23,11 +23,8 @@ public abstract class LearningActivityFragment extends Fragment {
     return root;
   }
 
-
-
   public abstract Activity.Type getType(); //everytime add activity is a subclass
   public abstract int getLayoutId();
-
 
   public enum Event {
     START,

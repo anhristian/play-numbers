@@ -50,8 +50,8 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
     return throwable;
   }
 
-  public LiveData<ActivityWithProgress> getType(){ //!!!!!!!!!!!!!!
-    return type;
+  public LiveData<List<ActivityWithProgress>> getType(){ //!!!!!!!!!!!!!!
+    return activityRepository.getType();
 
   }
 

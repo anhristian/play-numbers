@@ -36,14 +36,6 @@ public class MainActivity extends AppCompatActivity
     setupNavigation();
     setupObservers();
 
-   /* Button buttonActivityOne = (Button) findViewById(R.id.activity_one);
-    buttonActivityOne.setOnClickListener((v) -> {
-
-      Intent intent = new Intent
-          (MainActivity.this, MatchingNumberActivityOne.class);
-      startActivity(intent);
-    });*/
-
   }
 
 

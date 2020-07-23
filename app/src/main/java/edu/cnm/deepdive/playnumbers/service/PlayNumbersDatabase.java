@@ -59,14 +59,23 @@ public abstract class PlayNumbersDatabase extends RoomDatabase {
     @Override
     public void onCreate(@NonNull SupportSQLiteDatabase db) {
       super.onCreate(db);
-      Activity activity = new Activity();
-      activity.setClassName("edu.cnm.deepdive.playnumbers.controller.MatchingFragment");
-      activity.setType(Type.MATCHING);
-      activity.setLevel(1);
-      activity.setName("Match the number with the right image");
-      PlayNumbersDatabase.getInstance().getActivityDao().insert(activity)
+      Activity activityMatching = new Activity();
+      activityMatching.setClassName("edu.cnm.deepdive.playnumbers.controller.MatchingActivityFragment");
+      activityMatching.setType(Type.MATCHING);
+      activityMatching.setLevel(1);
+      activityMatching.setName("Match the number");
+      PlayNumbersDatabase.getInstance().getActivityDao().insert(activityMatching)
+          .subscribeOn(Schedulers.io())  //ReactiveX
+          .subscribe(); //this put in db   the fragment with numbers. talking to a view model
+
+      Activity activityMissing = new Activity();
+      activityMissing.setClassName("edu.cnm.deepdive.playnumbers.controller.MissingNumberActivityFragment");
+      activityMissing.setType(Type.MISSING);
+      activityMissing.setLevel(1);
+      activityMissing.setName("Find Missing Number");
+      PlayNumbersDatabase.getInstance().getActivityDao().insert(activityMissing)
           .subscribeOn(Schedulers.io())
-          .subscribe(); //put in db   the fragment with numbers. talking to a view model
+          .subscribe();
 
     }
   }
