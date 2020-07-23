@@ -38,8 +38,8 @@ public class ActivityRepository {
         .subscribeOn(Schedulers.io());
 
   }
-  public LiveData<List<ActivityWithProgress>> getType() { //!!!!!!!!!!!!!!!!!!!!!!
-    return activityDao.selectedByType();
+  public LiveData<List<ActivityWithProgress>> get(Type type) { //!!!!!!!!!!!!!!!!!!!!!!
+    return activityDao.selectByType(type);
   }
 
   @Transaction

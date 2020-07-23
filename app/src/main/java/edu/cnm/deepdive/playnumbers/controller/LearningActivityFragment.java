@@ -19,11 +19,11 @@ public abstract class LearningActivityFragment extends Fragment {
   public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
       @Nullable Bundle savedInstanceState) {
 
-     root = inflater.inflate(getLayoutId(), container, false); //a subclass is created will now will inflate this class
+     root = inflater.inflate(getLayoutId(), container, false);               //a subclass is created will now will inflate this class
     return root;
   }
 
-  public abstract Activity.Type getType(); //everytime add activity is a subclass
+  public abstract Activity.Type getType();                                    //every time add activity is a subclass
   public abstract int getLayoutId();
 
   public enum Event {
@@ -33,7 +33,7 @@ public abstract class LearningActivityFragment extends Fragment {
   }
 
   public interface CallBack{
-    void onEvent(Event event);  //to show suspend
+    void onEvent(Event event);
   }
 
 }

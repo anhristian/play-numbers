@@ -44,7 +44,7 @@ public interface ActivityDao {
   Single<ActivityWithProgress> selectedById(long activityId);
 
 
-  @Query("SELECT * FROM Activity ORDER BY type")
-  LiveData<List<ActivityWithProgress>> selectedByType(); // !!!!!!!!!!!!gives the activities by specific type
+  @Query("SELECT * FROM Activity WHERE type = :type ORDER BY name")
+  LiveData<List<ActivityWithProgress>> selectByType(Type type); // !!!!!!!!!!!!gives the activities by specific type
 
 }

@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import edu.cnm.deepdive.playnumbers.R;
 import edu.cnm.deepdive.playnumbers.model.entity.Activity.Type;
 import edu.cnm.deepdive.playnumbers.model.pojo.ActivityWithProgress;
+import edu.cnm.deepdive.playnumbers.view.ActivitiesAdapter;
 import edu.cnm.deepdive.playnumbers.viewmodel.MainViewModel;
 import java.util.List;
 
@@ -22,7 +23,7 @@ public class LearningActivitiesFragment extends Fragment {
   public static final String TYPE_KEY = "type";
 
   private MainViewModel viewModel;
-  private RecyclerView typeActivity;
+  private RecyclerView typeActivities;
 
 
   private Type type;
@@ -50,7 +51,7 @@ public class LearningActivitiesFragment extends Fragment {
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
     View view = inflater.inflate(R.layout.fragment_learning_activities, container, false);
-    typeActivity = view.findViewById(R.id.type_activities);
+    typeActivities = view.findViewById(R.id.type_activities);
     return view;
 
   }
@@ -59,12 +60,13 @@ public class LearningActivitiesFragment extends Fragment {
     super.onViewCreated(view, savedInstanceState);
     viewModel = new ViewModelProvider(getActivity())
         .get(MainViewModel.class);
-    viewModel.getType().observe(getViewLifecycleOwner(), (types) ->{
-    /*  ArrayAdapter<Type> adapter = new ArrayAdapter<>(
-          LearningActivitiesFragment.this.getContext(), R.layout.fragment_learning_activities
-      )
-      }*/
+    viewModel.getActivitiesForType().observe(getViewLifecycleOwner(), (activities) ->{
+      if (activities != null) {
+        ActivitiesAdapter adapter = new ActivitiesAdapter(getContext(), activities);
+        typeActivities.setAdapter(adapter);
+      }
     });
+    viewModel.setType(type);
   }
 }
 

@@ -32,4 +32,6 @@ public class MatchingNumberFragment extends LearningActivityFragment {
   public int getLayoutId() {
     return R.layout.fragment_matching;
   }
+  //Use a switch statement for setting the right answers.
+  //maybe Use toast to display the "correct",  "wrong" + textSpeech.
 }

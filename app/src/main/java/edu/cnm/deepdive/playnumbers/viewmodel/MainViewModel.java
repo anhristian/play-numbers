@@ -8,6 +8,7 @@ import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.OnLifecycleEvent;
+import androidx.lifecycle.Transformations;
 import edu.cnm.deepdive.playnumbers.model.entity.Activity;
 import edu.cnm.deepdive.playnumbers.model.entity.Activity.Type;
 import edu.cnm.deepdive.playnumbers.model.entity.User;
@@ -24,7 +25,8 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
   private final MutableLiveData<Throwable> throwable;
   private final CompositeDisposable pending;
   private final MutableLiveData<ActivityWithProgress> activity;
-  private final MutableLiveData<ActivityWithProgress> type;
+  private final MutableLiveData<Type> type;
+  private final LiveData<List<ActivityWithProgress>> activitiesForType;
 
 
   public MainViewModel(@NonNull Application application) {
@@ -35,7 +37,15 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
     pending = new CompositeDisposable();
     activity = new MutableLiveData<>();
     type = new MutableLiveData<>();
+    activitiesForType = Transformations.switchMap(type, (t) -> activityRepository.get(t));
+  }
 
+  public void setType(Type type){
+    this.type.setValue(type); //we want to set a piece of data from world to trig a new query
+  }
+
+  public LiveData<List<ActivityWithProgress>> getActivitiesForType() {
+    return activitiesForType;
   }
 
   public LiveData<List<User>> getUser() {
@@ -48,11 +58,6 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
 
   public LiveData<Throwable> getThrowable() {
     return throwable;
-  }
-
-  public LiveData<List<ActivityWithProgress>> getType(){ //!!!!!!!!!!!!!!
-    return activityRepository.getType();
-
   }
 
   public void setActivityId(long id) {
