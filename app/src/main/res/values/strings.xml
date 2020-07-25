@@ -21,4 +21,7 @@
   <string name="what_do_you_want_to_play">What do you want to play?</string>
   <string name="play_and_learn_numbers">Play and Learn Numbers</string>
   <string name="activity_title">Activity Title</string>
+
+  <!-- TODO: Remove or change this placeholder text -->
+  <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

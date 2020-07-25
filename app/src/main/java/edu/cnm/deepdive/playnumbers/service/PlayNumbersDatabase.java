@@ -60,7 +60,7 @@ public abstract class PlayNumbersDatabase extends RoomDatabase {
     public void onCreate(@NonNull SupportSQLiteDatabase db) {
       super.onCreate(db);
       Activity activityMatching = new Activity();
-      activityMatching.setClassName("edu.cnm.deepdive.playnumbers.controller.MatchingActivityFragment");
+      activityMatching.setClassName("edu.cnm.deepdive.playnumbers.controller.MatchingNumberFragment");
       activityMatching.setType(Type.MATCHING);
       activityMatching.setLevel(1);
       activityMatching.setName("Match the number");
@@ -69,7 +69,7 @@ public abstract class PlayNumbersDatabase extends RoomDatabase {
           .subscribe(); //this put in db   the fragment with numbers. talking to a view model
 
       Activity activityMissing = new Activity();
-      activityMissing.setClassName("edu.cnm.deepdive.playnumbers.controller.MissingNumberActivityFragment");
+      activityMissing.setClassName("edu.cnm.deepdive.playnumbers.controller.MissingNumberFragment");
       activityMissing.setType(Type.MISSING);
       activityMissing.setLevel(1);
       activityMissing.setName("Find the missing number");

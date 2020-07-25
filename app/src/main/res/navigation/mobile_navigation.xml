@@ -17,20 +17,52 @@
    android:id="@+id/navigation_activities"
    android:label="@string/learning_activities"
    android:name="edu.cnm.deepdive.playnumbers.controller.LearningActivitiesFragment"
-   tools:layout="@layout/fragment_learning_activities"
-   />
+   tools:layout="@layout/fragment_learning_activities">
+
+   <action
+     android:id="@+id/open_matching"
+     app:destination="@id/navigation_matching">
+     <argument
+       android:name="className"
+       app:argType="string"/>
+   </action>
+
+   <action
+     android:id="@+id/open_missing"
+     app:destination="@id/navigation_missing">
+     <argument
+       android:name="className"
+       app:argType="string"/>
+   </action>
+
+
+ </fragment>
 
 
   <fragment
     android:id="@+id/navigation_matching"
     android:label="@string/title_matching"
-    android:name="edu.cnm.deepdive.playnumbers.controller.MatchingNumberFragment"
-    tools:layout="@layout/fragment_matching_number"/>
+    android:name="edu.cnm.deepdive.playnumbers.controller.MatchingHostFragment"
+    tools:layout="@layout/fragment_matching_host">
+
+    <argument
+      android:name="className"
+      app:argType="string"/>
+
+
+  </fragment>
 
 
   <fragment
     android:id="@+id/navigation_missing"
     android:label="@string/title_missing"
-    android:name="edu.cnm.deepdive.playnumbers.controller.MissingNumberFragment"
-    tools:layout="@layout/fragment_missing_number"/>
+    android:name="edu.cnm.deepdive.playnumbers.controller.MissingHostFragment"
+    tools:layout="@layout/fragment_missing_host">
+
+    <argument
+      android:name="className"
+      app:argType="string"/>
+
+  </fragment>
+
 </navigation>

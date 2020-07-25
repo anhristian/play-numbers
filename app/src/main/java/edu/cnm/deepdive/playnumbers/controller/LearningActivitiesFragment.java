@@ -8,11 +8,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 import edu.cnm.deepdive.playnumbers.R;
+import edu.cnm.deepdive.playnumbers.controller.LearningActivitiesFragmentDirections.OpenMatching;
+import edu.cnm.deepdive.playnumbers.controller.LearningActivitiesFragmentDirections.OpenMissing;
+import edu.cnm.deepdive.playnumbers.model.entity.Activity;
 import edu.cnm.deepdive.playnumbers.model.entity.Activity.Type;
 import edu.cnm.deepdive.playnumbers.view.ActivitiesAdapter;
 import edu.cnm.deepdive.playnumbers.viewmodel.MainViewModel;
+import java.lang.reflect.Constructor;
 
 public class LearningActivitiesFragment extends Fragment {
 
@@ -53,17 +59,32 @@ public class LearningActivitiesFragment extends Fragment {
   }
 
   @Override
-  public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) { //!!!!!!!!!
+  public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) { 
     super.onViewCreated(view, savedInstanceState);
     viewModel = new ViewModelProvider(getActivity())
         .get(MainViewModel.class);
     viewModel.getActivitiesForType().observe(getViewLifecycleOwner(), (activities) -> {
       if (activities != null) {
-        ActivitiesAdapter adapter = new ActivitiesAdapter(getContext(), activities);
+        ActivitiesAdapter adapter =
+            new ActivitiesAdapter(getContext(), activities, this::openActivity);
         activityList.setAdapter(adapter);
       }
     });
     viewModel.setType(type);
+  }
+
+  private void openActivity(View view, int position, Activity activity) {
+
+    switch (activity.getType()) {
+      case MISSING:
+        OpenMissing missingAction = LearningActivitiesFragmentDirections.openMissing(activity.getClassName());
+        Navigation.findNavController(getView()).navigate(missingAction);
+        break;
+      case MATCHING:
+        OpenMatching matchingAction = LearningActivitiesFragmentDirections.openMatching(activity.getClassName());
+        Navigation.findNavController(getView()).navigate(matchingAction); //open up masthich fragment and pass name
+        break;
+    }
   }
 }
 

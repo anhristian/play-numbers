@@ -6,9 +6,38 @@
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   android:background="@android:color/holo_blue_light"
-  tools:context=".controller.MatchingNumberFragment">
+  tools:context=".controller.MissingNumberFragment">
 
-  <androidx.recyclerview.widget.RecyclerView
+  <androidx.constraintlayout.widget.Guideline
+    android:id="@+id/horizontal_guideline"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    app:layout_constraintGuide_percent="0.5"/>
+
+
+  <ImageView
+    android:id="@+id/drag_image_1"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:orientation="horizontal"
+    android:layout_margin="@dimen/margin_dimens"
+    app:layout_constraintHorizontal_chainStyle="packed"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toTopOf="@id/horizontal_guideline"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"/>
+  
+<!-- <ImageView
+   android:layout_width=""
+   android:layout_height=""-->
+    
+
+
+
+
+
+<!--  <androidx.recyclerview.widget.RecyclerView
     android:id="@+id/missing_activities"
     android:layout_width="0dp"
     android:layout_height="0dp"
@@ -17,6 +46,6 @@
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"/>
+    app:layout_constraintEnd_toEndOf="parent"/>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

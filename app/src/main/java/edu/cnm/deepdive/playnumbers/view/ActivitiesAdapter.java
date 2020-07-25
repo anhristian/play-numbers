@@ -18,11 +18,13 @@ public class ActivitiesAdapter extends RecyclerView.Adapter<Holder> {
 
   private final Context context;
   private final List<? extends Activity> activities;
+  private final OnClickListener listener;
 
   public ActivitiesAdapter(Context context,
-      List<? extends Activity> activities) {
+      List<? extends Activity> activities, OnClickListener listener) {
     this.context = context;
     this.activities = activities;
+    this.listener = listener;
   }
 
   @NonNull
@@ -47,34 +49,35 @@ public class ActivitiesAdapter extends RecyclerView.Adapter<Holder> {
     private final View root;
     private final TextView activityName;
     private final ProgressBar activityProgress;
-    //private final ImageView activityImage;
+    private final ImageView activityImage;
+    private Activity activity;
 
-    //TODO Define additional field for view objects in custom layouts.
+
 
     private Holder(@NonNull View itemView) {
       super(itemView);
       root = itemView;
       activityName = itemView.findViewById(R.id.activity_name);
       activityProgress = itemView.findViewById(R.id.activity_progress);
-      //activityImage = itemView.findViewById(R.id.activity_image);
+      activityImage = itemView.findViewById(R.id.activity_image);
+
     }
 
     private  void bind(int position) {
-      //TODO get activity at position and use its content to populate view Object.
-      Activity activity = activities.get(position);
-      //((TextView) root).setText(activity.getName());
+
+      activity = activities.get(position);
 
       activityName.setText(activity.getName());
-      activityProgress.setProgress(activity.getLevel());/////?????????
-      //activityImage.setImageDrawable(); ////?????
+      activityProgress.setProgress(activity.getLevel());
+      activityImage.setImageResource(R.drawable.image_lion);
+      root.setOnClickListener((v) -> listener.onClick(v, position, activity));
 
     }
-
   }
 
-/*  public interface OnClickListener {
+  public interface OnClickListener {
 
     void onClick(View v, int position, Activity activity);
-  }*/
+  }
 
 }
