@@ -1,8 +1,6 @@
 package edu.cnm.deepdive.playnumbers.controller;
 
 import android.os.Bundle;
-import android.widget.Adapter;
-import android.widget.ArrayAdapter;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -13,17 +11,15 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 import edu.cnm.deepdive.playnumbers.R;
 import edu.cnm.deepdive.playnumbers.model.entity.Activity.Type;
-import edu.cnm.deepdive.playnumbers.model.pojo.ActivityWithProgress;
 import edu.cnm.deepdive.playnumbers.view.ActivitiesAdapter;
 import edu.cnm.deepdive.playnumbers.viewmodel.MainViewModel;
-import java.util.List;
 
 public class LearningActivitiesFragment extends Fragment {
 
   public static final String TYPE_KEY = "type";
 
   private MainViewModel viewModel;
-  private RecyclerView typeActivities;
+  private RecyclerView activityList;
 
 
   private Type type;
@@ -51,19 +47,20 @@ public class LearningActivitiesFragment extends Fragment {
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
     View view = inflater.inflate(R.layout.fragment_learning_activities, container, false);
-    typeActivities = view.findViewById(R.id.type_activities);
+    activityList = view.findViewById(R.id.activity_list);
     return view;
 
   }
+
   @Override
   public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) { //!!!!!!!!!
     super.onViewCreated(view, savedInstanceState);
     viewModel = new ViewModelProvider(getActivity())
         .get(MainViewModel.class);
-    viewModel.getActivitiesForType().observe(getViewLifecycleOwner(), (activities) ->{
+    viewModel.getActivitiesForType().observe(getViewLifecycleOwner(), (activities) -> {
       if (activities != null) {
         ActivitiesAdapter adapter = new ActivitiesAdapter(getContext(), activities);
-        typeActivities.setAdapter(adapter);
+        activityList.setAdapter(adapter);
       }
     });
     viewModel.setType(type);

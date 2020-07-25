@@ -25,12 +25,12 @@
     android:id="@+id/navigation_matching"
     android:label="@string/title_matching"
     android:name="edu.cnm.deepdive.playnumbers.controller.MatchingNumberFragment"
-    tools:layout="@layout/fragment_matching"/>
+    tools:layout="@layout/fragment_matching_number"/>
 
 
   <fragment
     android:id="@+id/navigation_missing"
     android:label="@string/title_missing"
     android:name="edu.cnm.deepdive.playnumbers.controller.MissingNumberFragment"
-    tools:layout="@layout/fragment_missing"/>
+    tools:layout="@layout/fragment_missing_number"/>
 </navigation>

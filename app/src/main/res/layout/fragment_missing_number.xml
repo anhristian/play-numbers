@@ -5,10 +5,11 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  tools:context=".controller.MissingNumberFragment">
+  android:background="@android:color/holo_blue_light"
+  tools:context=".controller.MatchingNumberFragment">
 
   <androidx.recyclerview.widget.RecyclerView
-    android:id="@+id/recycler_view"
+    android:id="@+id/missing_activities"
     android:layout_width="0dp"
     android:layout_height="0dp"
     android:layout_margin="8dp"
@@ -17,8 +18,5 @@
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toEndOf="parent"/>
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

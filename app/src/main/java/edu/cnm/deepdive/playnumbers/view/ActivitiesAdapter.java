@@ -4,9 +4,12 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import edu.cnm.deepdive.playnumbers.R;
 import edu.cnm.deepdive.playnumbers.model.entity.Activity;
 import edu.cnm.deepdive.playnumbers.view.ActivitiesAdapter.Holder;
 import java.util.List;
@@ -22,12 +25,10 @@ public class ActivitiesAdapter extends RecyclerView.Adapter<Holder> {
     this.activities = activities;
   }
 
-
   @NonNull
   @Override
   public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-    //TODO Inflate a custom layout instead of default.
-    View root = LayoutInflater.from(context).inflate(android.R.layout.simple_list_item_1, parent, false);
+    View root = LayoutInflater.from(context).inflate(R.layout.item_activity, parent, false);
     return new Holder(root);
   }
 
@@ -44,20 +45,36 @@ public class ActivitiesAdapter extends RecyclerView.Adapter<Holder> {
   class Holder extends RecyclerView.ViewHolder {
 
     private final View root;
-    //TODO Definde additional field for viewobjects in custom layouts.
+    private final TextView activityName;
+    private final ProgressBar activityProgress;
+    //private final ImageView activityImage;
+
+    //TODO Define additional field for view objects in custom layouts.
 
     private Holder(@NonNull View itemView) {
       super(itemView);
       root = itemView;
+      activityName = itemView.findViewById(R.id.activity_name);
+      activityProgress = itemView.findViewById(R.id.activity_progress);
+      //activityImage = itemView.findViewById(R.id.activity_image);
     }
 
     private  void bind(int position) {
       //TODO get activity at position and use its content to populate view Object.
-      Activity activity = activities.get(position); //we know which activity we want
-      ((TextView) root).setText(activity.getName());
+      Activity activity = activities.get(position);
+      //((TextView) root).setText(activity.getName());
+
+      activityName.setText(activity.getName());
+      activityProgress.setProgress(activity.getLevel());/////?????????
+      //activityImage.setImageDrawable(); ////?????
+
     }
 
   }
 
+/*  public interface OnClickListener {
+
+    void onClick(View v, int position, Activity activity);
+  }*/
 
 }

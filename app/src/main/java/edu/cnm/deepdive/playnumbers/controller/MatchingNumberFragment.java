@@ -6,10 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProviders;
 import edu.cnm.deepdive.playnumbers.R;
-import edu.cnm.deepdive.playnumbers.controller.LearningActivityFragment;
 import edu.cnm.deepdive.playnumbers.model.entity.Activity.Type;
 
 public class MatchingNumberFragment extends LearningActivityFragment {
@@ -30,7 +27,7 @@ public class MatchingNumberFragment extends LearningActivityFragment {
 
   @Override
   public int getLayoutId() {
-    return R.layout.fragment_matching;
+    return R.layout.fragment_matching_number;
   }
   //Use a switch statement for setting the right answers.
   //maybe Use toast to display the "correct",  "wrong" + textSpeech.

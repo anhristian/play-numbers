@@ -20,4 +20,5 @@
   <string name="learning_activities">Learning Activities</string>
   <string name="what_do_you_want_to_play">What do you want to play?</string>
   <string name="play_and_learn_numbers">Play and Learn Numbers</string>
+  <string name="activity_title">Activity Title</string>
 </resources>

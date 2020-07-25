@@ -6,10 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProviders;
 import edu.cnm.deepdive.playnumbers.R;
-import edu.cnm.deepdive.playnumbers.controller.ui.notifications.NotificationsViewModel;
 import edu.cnm.deepdive.playnumbers.model.entity.Activity.Type;
 
 
@@ -32,6 +29,6 @@ public class MissingNumberFragment extends LearningActivityFragment {
 
   @Override
   public int getLayoutId() {
-    return R.layout.fragment_missing;
+    return R.layout.fragment_missing_number;
   }
 }

@@ -7,4 +7,6 @@
   <dimen name="title_dimens">50sp</dimen>
   <dimen name="text_size">30sp</dimen>
   <dimen name="margin_dimens">8dp</dimen>
+  <dimen name="half_margin">4dp</dimen>
+  <dimen name="text_item_radius">4dp</dimen>
 </resources>

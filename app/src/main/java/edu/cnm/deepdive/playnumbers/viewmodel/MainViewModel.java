@@ -41,7 +41,7 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
   }
 
   public void setType(Type type){
-    this.type.setValue(type); //we want to set a piece of data from world to trig a new query
+    this.type.setValue(type);
   }
 
   public LiveData<List<ActivityWithProgress>> getActivitiesForType() {
@@ -65,8 +65,8 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
     pending.add(
         activityRepository.get(id)
         .subscribe(
-            (activity) -> this.activity.postValue(activity),
-            (throwable) -> this.throwable.postValue(throwable)
+            this.activity::postValue,
+            this.throwable::postValue
         )
 
     );

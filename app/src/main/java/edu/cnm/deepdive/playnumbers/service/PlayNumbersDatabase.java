@@ -72,7 +72,7 @@ public abstract class PlayNumbersDatabase extends RoomDatabase {
       activityMissing.setClassName("edu.cnm.deepdive.playnumbers.controller.MissingNumberActivityFragment");
       activityMissing.setType(Type.MISSING);
       activityMissing.setLevel(1);
-      activityMissing.setName("Find Missing Number");
+      activityMissing.setName("Find the missing number");
       PlayNumbersDatabase.getInstance().getActivityDao().insert(activityMissing)
           .subscribeOn(Schedulers.io())
           .subscribe();

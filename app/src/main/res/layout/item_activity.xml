@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:layout_margin="@dimen/half_margin"
+  app:cardCornerRadius="@dimen/text_item_radius"
+  tools:context=".view.ActivitiesAdapter"
+  >
+
+  <LinearLayout
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/half_margin"
+    android:background="?attr/selectableItemBackground"
+    android:orientation="vertical">
+<!--
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent">
+-->
+    <ImageView
+      android:id="@+id/activity_image"
+      android:layout_width="40dp"
+      android:layout_height="40dp"
+      android:layout_margin="@dimen/half_margin"
+      android:src="@drawable/image_lion"/>
+<!--      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toStartOf="@id/activity_name"-->
+
+    <TextView
+      android:id="@+id/activity_name"
+      style="@style/ActivityText"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/half_margin"
+      android:gravity="start"
+      android:text="@string/activity_title"/>
+<!--      app:layout_constraintStart_toEndOf="@id/activity_image"
+      app:layout_constraintEnd_toStartOf="@id/activity_progress"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintBottom_toBottomOf="parent"/>-->
+
+
+    <ProgressBar
+      android:id="@+id/activity_progress"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:progress="0"
+      android:layout_margin="@dimen/half_margin"
+      android:layout_gravity="end"
+      style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+<!--      app:layout_constraintStart_toEndOf="@id/activity_name"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintBottom_toBottomOf="parent"/>-->
+
+  </LinearLayout>
+
+</androidx.cardview.widget.CardView>

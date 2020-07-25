@@ -26,8 +26,6 @@ public class MainActivity extends AppCompatActivity
   private GoogleSignInService signInService;
   private NavController navController;
 
- /* private Button buttonActivityOne;*/
-
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
