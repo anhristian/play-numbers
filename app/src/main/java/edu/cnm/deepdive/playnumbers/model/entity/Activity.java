@@ -22,12 +22,11 @@ public class Activity {
   private long id;
 
   @NonNull
-  //@ColumnInfo(index = true)
   private String name;
 
   @NonNull
   @ColumnInfo(name = "class_name")
-  private String className;  //type activity
+  private String className;
 
   private int level;
 
