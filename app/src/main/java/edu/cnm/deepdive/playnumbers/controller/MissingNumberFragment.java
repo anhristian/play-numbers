@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 import edu.cnm.deepdive.playnumbers.R;
 import edu.cnm.deepdive.playnumbers.model.entity.Activity.Type;
 
@@ -21,6 +22,7 @@ public class MissingNumberFragment extends LearningActivityFragment {
     //TODO Add Onclick Listener for activity button.
     return super.onCreateView(inflater, container, savedInstanceState);
   }
+
 
   @Override
   public Type getType() {

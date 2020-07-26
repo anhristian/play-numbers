@@ -82,7 +82,7 @@ public class LearningActivitiesFragment extends Fragment {
         break;
       case MATCHING:
         OpenMatching matchingAction = LearningActivitiesFragmentDirections.openMatching(activity.getClassName());
-        Navigation.findNavController(getView()).navigate(matchingAction); //open up masthich fragment and pass name
+        Navigation.findNavController(getView()).navigate(matchingAction); //open up matching fragment and pass name
         break;
     }
   }
