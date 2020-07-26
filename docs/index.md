@@ -29,8 +29,26 @@ says back to the child the number he selected, and gives short encouraging expre
 
    > As a parent with experience in long flights with a child, I want to offer the other parents an option for keeping their children busy, 
         so the long trips will be with more peace for parents and with more fun for little travelers.
-  
+
+## Summary of current state of the app
+
+ Now, the code compiles, and the app runs displaying the implemented layouts.
+    Current deficiencies are:
+   * Database is incomplete, it does not display the actual activities. 
+   * The progress of the activity is not showing yet. 
+   * Text to speech feature.
    
+ The list of cosmetic improvements:
+   * Text to speech feature;
+   * Implementing the landscape version for the screen;
+   * Resize some images;
+   * Adding descriptive text on the screen;
+   
+  Stretch goals:
+   * To implement text to speech feature.
+   * To create a large pool of activities of each type.
+   * To increase the playing numbers from 10 to 20.
+
 ## Design documentation
 
    * [Wireframe diagram](wireframe.md)
