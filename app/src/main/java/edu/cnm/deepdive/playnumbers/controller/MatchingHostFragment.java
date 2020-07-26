@@ -17,10 +17,9 @@ public class MatchingHostFragment extends Fragment {
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
-    // Inflate the layout for this fragment
     try {
       root = inflater.inflate(R.layout.fragment_matching_host, container, false);
-      View activityContainer = root.findViewById(R.id.activity_container);
+      View activityContainerMatching = root.findViewById(R.id.activity_container_matching);
       MatchingHostFragmentArgs args = MatchingHostFragmentArgs.fromBundle(getArguments());
       String className = args.getClassName();
       Class clazz = Class.forName(className);
@@ -28,7 +27,7 @@ public class MatchingHostFragment extends Fragment {
       LearningActivityFragment fragment = constructor.newInstance();
 
       getChildFragmentManager().beginTransaction()
-          .replace(R.id.activity_container, fragment, fragment.getClass().getName())
+          .replace(R.id.activity_container_matching, fragment, fragment.getClass().getName())
           .commit();                                          //to put a fragment in place
       return root;
     } catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException

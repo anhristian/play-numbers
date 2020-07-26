@@ -6,7 +6,7 @@
   tools:context=".controller.MatchingHostFragment">
 
     <FrameLayout
-        android:id="@+id/activity_container"
+        android:id="@+id/activity_container_matching"
       android:layout_width="match_parent"
       android:layout_height="match_parent"/>
 

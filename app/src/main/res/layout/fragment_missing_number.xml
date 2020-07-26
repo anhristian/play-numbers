@@ -22,30 +22,94 @@
     android:layout_height="50dp"
     android:orientation="horizontal"
     android:layout_margin="@dimen/margin_dimens"
-    app:layout_constraintHorizontal_chainStyle="packed"
+    app:layout_constraintHorizontal_chainStyle="spread"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintBottom_toTopOf="@id/horizontal_guideline"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"/>
-  
-<!-- <ImageView
-   android:layout_width=""
-   android:layout_height=""-->
-    
+    app:layout_constraintEnd_toStartOf="@id/drag_image_2"/>
 
+ <ImageView
+   android:id="@+id/drag_image_2"
+   android:layout_width="50dp"
+   android:layout_height="50dp"
+   android:orientation="horizontal"
+   android:layout_margin="@dimen/margin_dimens"
+   app:layout_constraintHorizontal_chainStyle="spread"
+   app:layout_constraintTop_toTopOf="parent"
+   app:layout_constraintBottom_toTopOf="@id/horizontal_guideline"
+   app:layout_constraintStart_toEndOf="@id/drag_image_1"
+   app:layout_constraintEnd_toStartOf="@id/drag_image_3"/>
 
-
-
-
-<!--  <androidx.recyclerview.widget.RecyclerView
-    android:id="@+id/missing_activities"
-    android:layout_width="0dp"
-    android:layout_height="0dp"
-    android:layout_margin="8dp"
-    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-    app:layout_constraintBottom_toBottomOf="parent"
+  <ImageView
+    android:id="@+id/drag_image_3"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:orientation="horizontal"
+    android:layout_margin="@dimen/margin_dimens"
+    app:layout_constraintHorizontal_chainStyle="spread"
     app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toTopOf="@id/horizontal_guideline"
+    app:layout_constraintStart_toEndOf="@id/drag_image_2"
+    app:layout_constraintEnd_toStartOf="@id/drag_image_4"/>
+
+  <ImageView
+    android:id="@+id/drag_image_4"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:orientation="horizontal"
+    android:layout_margin="@dimen/margin_dimens"
+    app:layout_constraintHorizontal_chainStyle="spread"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toTopOf="@id/horizontal_guideline"
+    app:layout_constraintStart_toEndOf="@id/drag_image_3"
+    app:layout_constraintEnd_toStartOf="@id/drag_image_5"/>
+
+  <ImageView
+    android:id="@+id/drag_image_5"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:orientation="horizontal"
+    android:layout_margin="@dimen/margin_dimens"
+    app:layout_constraintHorizontal_chainStyle="spread"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toTopOf="@id/horizontal_guideline"
+    app:layout_constraintStart_toEndOf="@id/drag_image_4"
+    app:layout_constraintEnd_toEndOf="parent"/>
+
+
+  <ImageView
+    android:id="@+id/image_face"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    app:layout_constraintTop_toBottomOf="@id/horizontal_guideline"
+    app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"/>-->
+    android:layout_margin="@dimen/margin_dimens"
+    app:layout_constraintHorizontal_chainStyle="packed"
+    />
+
+<!--<RelativeLayout
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  app:layout_constraintStart_toStartOf="parent"
+  app:layout_constraintEnd_toEndOf="parent"
+  app:layout_constraintTop_toBottomOf="@id/horizontal_guideline"
+  app:layout_constraintBottom_toBottomOf="parent"
+  android:layout_margin="@dimen/half_margin">-->
+
+  <!--<FrameLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintStart_toEndOf="@id/image_face"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/horizontal_guideline"
+    app:layout_constraintBottom_toBottomOf="parent">-->
+
+
+
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

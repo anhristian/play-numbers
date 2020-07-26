@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import edu.cnm.deepdive.playnumbers.R;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 
 
 public class MissingHostFragment extends Fragment {
@@ -17,8 +19,22 @@ public class MissingHostFragment extends Fragment {
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
-    //TODO Add the corresponding code as in MatchHost
-    // Inflate the layout for this fragment
-    return inflater.inflate(R.layout.fragment_missing_host, container, false);
+    try {
+      root = inflater.inflate(R.layout.fragment_missing_host, container, false);
+      View activityContainerMissing = root.findViewById(R.id.activity_container_missing);
+      MissingHostFragmentArgs args = MissingHostFragmentArgs.fromBundle(getArguments());
+      String className = args.getClassName();
+      Class clazz = Class.forName(className);
+      Constructor<LearningActivityFragment> constructor = clazz.getConstructor();
+      LearningActivityFragment fragment = constructor.newInstance();
+
+      getChildFragmentManager().beginTransaction()
+          .replace(R.id.activity_container_missing, fragment, fragment.getClass().getName())
+          .commit();
+      return root;
+    } catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException
+        | java.lang.InstantiationException | InvocationTargetException e) {
+      throw  new RuntimeException(e);
+    }
   }
 }
