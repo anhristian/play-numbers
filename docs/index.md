@@ -54,6 +54,19 @@ says back to the child the number he selected, and gives short encouraging expre
    * [Wireframe diagram](wireframe.md)
    * [Entity-relationship diagram](erd.md)
    
+###### [Data Definition Language (DDL)](https://github.com/anhristian/play-numbers/blob/master/docs/sql/ddl.sql)        
+
+## Technical requirements & dependencies
+
+  This app was tested on an emulator Pixel 3 API 28, and the minimum required is API 21. The restriction I am aware of at this moment is the landscape orientation.
+  In this project are used dependencies:
+   * Google Sign In
+   * ReactiveX
+   * Room and SQLite
+   * Stetho
+   
+ To run the app is required the internet permission. The app consumes the Google Sign In as an external service.
+   
 ## Device and external services
 
    * **_Google Sign In_**
@@ -79,7 +92,6 @@ says back to the child the number he selected, and gives short encouraging expre
 
 ###### [Repository classes and Database class](https://github.com/anhristian/play-numbers/tree/master/app/src/main/java/edu/cnm/deepdive/playnumbers/service)
 
-###### [Data Definition Language (DDL)](https://github.com/anhristian/play-numbers/blob/master/docs/sql/ddl.sql)        
   
 ###### [MainViewModel class](https://github.com/anhristian/play-numbers/tree/master/app/src/main/java/edu/cnm/deepdive/playnumbers/viewmodel)
    
