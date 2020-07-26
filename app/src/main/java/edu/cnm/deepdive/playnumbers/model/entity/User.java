@@ -26,7 +26,7 @@ public class User {
 
 
   @ColumnInfo(name = "oauth_key", collate = ColumnInfo.NOCASE)
-  private String oauth_key;
+  private String oauthKey;
 
   public long getId() {
     return id;
@@ -54,12 +54,12 @@ public class User {
   }
 
 
-  public String getOauth_key() {
-    return oauth_key;
+  public String getOauthKey() {
+    return oauthKey;
   }
 
-  public void setOauth_key(String oauth_key) {
-    this.oauth_key = oauth_key;
+  public void setOauthKey(String oauthKey) {
+    this.oauthKey = oauthKey;
   }
 }
 
