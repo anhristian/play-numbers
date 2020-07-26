@@ -41,8 +41,7 @@ says back to the child the number he selected, and gives short encouraging expre
    * **_Google Sign In_**
    
       The user will have the choice to provide his or her email, which will help to record the child's progress on the activities.
-      Otherwise, the user could skip it, but this will result in no saving the data from the progress.
-      The app doesn't require the Google Sign In for its functionality. 
+      The app requires the Google Sign In for its functionality. 
       
         * [Google Sign In](https://developers.google.com/identity/sign-in/android/sign-in)
         
@@ -62,7 +61,7 @@ says back to the child the number he selected, and gives short encouraging expre
 
 ###### [Repository classes and Database class](https://github.com/anhristian/play-numbers/tree/master/app/src/main/java/edu/cnm/deepdive/playnumbers/service)
 
-###### [Data Definition Language (DDL)](https://github.com/anhristian/play-numbers/blob/master/docs/ddl.md)        
+###### [Data Definition Language (DDL)](https://github.com/anhristian/play-numbers/blob/master/docs/sql/ddl.sql)        
   
 ###### [MainViewModel class](https://github.com/anhristian/play-numbers/tree/master/app/src/main/java/edu/cnm/deepdive/playnumbers/viewmodel)
    
