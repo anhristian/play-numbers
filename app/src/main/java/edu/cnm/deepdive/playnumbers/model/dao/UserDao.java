@@ -15,7 +15,7 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * The interface implements all functionality for inserting, deleting, updating, and querying the
+ * Implements all functionality for inserting, deleting, updating, and querying the
  * User Object from the database.
  */
 @Dao

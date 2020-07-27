@@ -19,6 +19,9 @@ import edu.cnm.deepdive.playnumbers.service.PlayNumbersDatabase.Converters;
 import io.reactivex.schedulers.Schedulers;
 import java.util.Date;
 
+/**
+ * A RoomDatabase subclass holding all the data from Entities an database version.
+ */
 @Database(
     entities = {User.class, Activity.class, Progress.class},
     version = 1,
@@ -31,16 +34,33 @@ public abstract class PlayNumbersDatabase extends RoomDatabase {
 
   private static Application context;
 
+  /**
+   * Sets the application context from database.
+   */
   public static void setContext(Application context) {
     PlayNumbersDatabase.context = context;
   }
 
+  /**
+   * Sets reference of UserDao to get it from database.
+   */
   public abstract UserDao getUserDao();
 
+  /**
+   * Sets reference of ActivityDao to get it from database.
+   */
   public abstract ActivityDao getActivityDao();
 
+  /**
+   * Sets reference of ProgressDao to get it from database.
+   */
   public abstract ProgressDao getProgressDao();
 
+  /**
+   * Obtains an instanceHolder from database.
+   *
+   * @return database instance.
+   */
   public static PlayNumbersDatabase getInstance() {
     return InstanceHolder.INSTANCE;
   }
@@ -60,13 +80,14 @@ public abstract class PlayNumbersDatabase extends RoomDatabase {
     public void onCreate(@NonNull SupportSQLiteDatabase db) {
       super.onCreate(db);
       Activity activityMatching = new Activity();
-      activityMatching.setClassName("edu.cnm.deepdive.playnumbers.controller.MatchingNumberFragment");
+      activityMatching
+          .setClassName("edu.cnm.deepdive.playnumbers.controller.MatchingNumberFragment");
       activityMatching.setType(Type.MATCHING);
       activityMatching.setLevel(1);
       activityMatching.setName("Match the number");
       PlayNumbersDatabase.getInstance().getActivityDao().insert(activityMatching)
-          .subscribeOn(Schedulers.io())  //ReactiveX
-          .subscribe(); //this put in db   the fragment with numbers. talking to a view model
+          .subscribeOn(Schedulers.io())  //this part use the ReactiveX
+          .subscribe(); //this line put in db the fragment with numbers. talking to a view model
 
       Activity activityMissing = new Activity();
       activityMissing.setClassName("edu.cnm.deepdive.playnumbers.controller.MissingNumberFragment");
@@ -80,13 +101,30 @@ public abstract class PlayNumbersDatabase extends RoomDatabase {
     }
   }
 
+  /**
+   * Converts an object of one class to an object of another class.
+   */
   public static class Converters {
 
+    /**
+     * Provides conversion between Objects of classes date to long for an easier mapping of their
+     * instances.
+     *
+     * @param value represents the Data's input.
+     * @return a Long value of time.
+     */
     @TypeConverter
     public static Long dateToLong(Date value) {
       return (value != null) ? value.getTime() : null;
     }
 
+    /**
+     * Provides conversion of Objects of classes long to Date for an easier mapping of their
+     * instances.
+     *
+     * @param value represents the Long's input.
+     * @return a Date value.
+     */
     @TypeConverter
     public static Date longToDate(Long value) {
       return (value != null) ? new Date(value) : null;

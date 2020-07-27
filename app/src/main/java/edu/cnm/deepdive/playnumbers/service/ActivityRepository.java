@@ -112,7 +112,7 @@ public class ActivityRepository {
   }
 
   /**
-   * The method holds the removing of the activity.
+   * Implements the removing of an activity.
    *
    * @param activity that is removed.
    * @return no activity
@@ -120,7 +120,7 @@ public class ActivityRepository {
   public Completable delete(Activity activity) {
     if (activity.getId() == 0) {
       return Completable.fromAction(() -> {
-      })  //the completable doesn't do anything.
+      })
           .subscribeOn(Schedulers.io());
     } else {
       return Completable.fromSingle(activityDao.delete(activity))

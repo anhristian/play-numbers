@@ -11,7 +11,7 @@ import io.reactivex.schedulers.Schedulers;
 import java.util.List;
 
 /**
- * The class holds methods get, save, and delete executed on a user of application.
+ * Holds methods get, save, and delete executed on a user of application.
  */
 public class UserRepository {
 

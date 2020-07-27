@@ -13,7 +13,7 @@ import com.google.android.gms.tasks.Task;
 
 
 /**
- * The class implements the service of Google Sign In.
+ * Implements the service of Google Sign In.
  */
 public class GoogleSignInService {
 
@@ -31,13 +31,13 @@ public class GoogleSignInService {
         .requestEmail()  //invoke this request that return an builder object whit which invoke the next.
         .requestId()
         .requestProfile()
-        // .requestIdToken(BuildConfig.CLIENT_ID)
-        .build(); // this return an option object
+        .build();
     client = GoogleSignIn.getClient(context, options);
   }
 
   /**
-   * The method set a context for the service that came from the instance.
+   * Sets a context for the service that came from the instance.
+   *
    * @param context sets the sign in.
    */
   public static void setContext(Application context) {
@@ -45,33 +45,57 @@ public class GoogleSignInService {
   }
 
   /**
-   * The method get the instance.
-   * @return  GoogleSignIn instance.
+   * Gets the instance.
+   *
+   * @return GoogleSignInService instance.
    */
   public static GoogleSignInService getInstance() {
     return InstanceHolder.INSTANCE;
   }
 
+  /**
+   * Obtains a LiveData to getAccount property.
+   *
+   * @return a LiveData for the account .
+   */
   public MutableLiveData<GoogleSignInAccount> getAccount() {
     return account;
   }
 
+  /**
+   * Obtains a LiveData to throwable property.
+   *
+   * @return a LiveData for the throwable.
+   */
   public MutableLiveData<Throwable> getThrowable() {
     return throwable;
   }
 
+  /**
+   * Obtains the Task for refresh property.
+   *
+   * @return an updated GoogleSignInAccount.
+   */
   public Task<GoogleSignInAccount> refresh() {
     return client.silentSignIn()
         .addOnSuccessListener(this::update)  //lambda method reference here
         .addOnFailureListener(this::update);
   }
 
+  /**
+   * Sets the starting Sign In process .
+   */
   public void startSignIn(Activity activity, int requestCode) {
     update((GoogleSignInAccount) null); //casting to show specific what GSIA
     Intent intent = client.getSignInIntent();
     activity.startActivityForResult(intent, requestCode);
   }
 
+  /**
+   * Obtains the Task for completing the Sign In.
+   *
+   * @return the completed Sign in task.
+   */
   public Task<GoogleSignInAccount> completeSignIn(Intent data) {
     Task<GoogleSignInAccount> task = null;
     try {
@@ -83,6 +107,11 @@ public class GoogleSignInService {
     return task;
   }
 
+  /**
+   * Obtains the Task for SignOut property.
+   *
+   * @return a task of SignOUt seated to null.
+   */
   public Task<Void> signOut() {
     return client.signOut()
         .addOnCompleteListener((ignored) -> update((GoogleSignInAccount) null));
