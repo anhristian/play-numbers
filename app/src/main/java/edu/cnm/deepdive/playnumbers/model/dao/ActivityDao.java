@@ -15,7 +15,10 @@ import io.reactivex.Single;
 import java.util.Collection;
 import java.util.List;
 
-
+/**
+ * The interface implements all functionality for inserting, deleting, updating, and querying the
+ * Activity Object from the database.
+ */
 @Dao
 public interface ActivityDao {
 
@@ -45,6 +48,7 @@ public interface ActivityDao {
 
 
   @Query("SELECT * FROM Activity WHERE type = :type ORDER BY name")
-  LiveData<List<ActivityWithProgress>> selectByType(Type type); // !!!!!!!!!!!!gives the activities by specific type
+  LiveData<List<ActivityWithProgress>> selectByType(
+      Type type);
 
 }

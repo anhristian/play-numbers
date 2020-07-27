@@ -20,8 +20,14 @@ import edu.cnm.deepdive.playnumbers.view.ActivitiesAdapter;
 import edu.cnm.deepdive.playnumbers.viewmodel.MainViewModel;
 import java.lang.reflect.Constructor;
 
+/**
+ * The class sets the behavior of the Fragment that contains the activities .
+ */
 public class LearningActivitiesFragment extends Fragment {
 
+  /**
+   * This field defines and assigns the variable of type String inside this class.
+   */
   public static final String TYPE_KEY = "type";
 
   private MainViewModel viewModel;
@@ -30,6 +36,12 @@ public class LearningActivitiesFragment extends Fragment {
 
   private Type type;
 
+  /**
+   * This method create a new instance of a fragment and setting the arguments to that fragment.
+   *
+   * @param type of arguments passed to the fragment.
+   * @return fragment of a LearningActivities type.
+   */
   public static LearningActivitiesFragment newInstance(Type type) {
     LearningActivitiesFragment fragment = new LearningActivitiesFragment();
     Bundle args = new Bundle();
@@ -59,7 +71,7 @@ public class LearningActivitiesFragment extends Fragment {
   }
 
   @Override
-  public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) { 
+  public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
     viewModel = new ViewModelProvider(getActivity())
         .get(MainViewModel.class);
@@ -77,12 +89,15 @@ public class LearningActivitiesFragment extends Fragment {
 
     switch (activity.getType()) {
       case MISSING:
-        OpenMissing missingAction = LearningActivitiesFragmentDirections.openMissing(activity.getClassName());
+        OpenMissing missingAction = LearningActivitiesFragmentDirections
+            .openMissing(activity.getClassName());
         Navigation.findNavController(getView()).navigate(missingAction);
         break;
       case MATCHING:
-        OpenMatching matchingAction = LearningActivitiesFragmentDirections.openMatching(activity.getClassName());
-        Navigation.findNavController(getView()).navigate(matchingAction); //open up matching fragment and pass name
+        OpenMatching matchingAction = LearningActivitiesFragmentDirections
+            .openMatching(activity.getClassName());
+        Navigation.findNavController(getView())
+            .navigate(matchingAction); //open up matching fragment and pass name
         break;
     }
   }

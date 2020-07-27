@@ -18,6 +18,9 @@ import edu.cnm.deepdive.playnumbers.service.UserRepository;
 import io.reactivex.disposables.CompositeDisposable;
 import java.util.List;
 
+/**
+ * The class holds and manages the UI-related data and expose the information via LiveData
+ */
 public class MainViewModel extends AndroidViewModel implements LifecycleObserver {
 
   private final UserRepository userRepository;
@@ -28,7 +31,11 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
   private final MutableLiveData<Type> type;
   private final LiveData<List<ActivityWithProgress>> activitiesForType;
 
-
+  /**
+   * The constructor prepares for use the new object of Application.
+   *
+   * @param application
+   */
   public MainViewModel(@NonNull Application application) {
     super(application);
     userRepository = new UserRepository(application);
@@ -37,57 +44,92 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
     pending = new CompositeDisposable();
     activity = new MutableLiveData<>();
     type = new MutableLiveData<>();
-    activitiesForType = Transformations.switchMap(type, (t) -> activityRepository.get(t));
+    activitiesForType = Transformations.switchMap(type, activityRepository::get);
   }
 
-  public void setType(Type type){
+  /**
+   * The method set the Type of application
+   */
+  public void setType(Type type) {
     this.type.setValue(type);
   }
 
+  /**
+   * The method get list of activities for type.
+   *
+   * @return A list of LiveData of activities for specific type.
+   */
   public LiveData<List<ActivityWithProgress>> getActivitiesForType() {
     return activitiesForType;
   }
 
+  /**
+   * The method get the list of all users.
+   *
+   * @return A list of LiveData of all users.
+   */
   public LiveData<List<User>> getUser() {
     return userRepository.getAll();
   }
 
+  /**
+   * The method get the list of all activities.
+   *
+   * @return A list of LiveData of all activities.
+   */
   public LiveData<List<ActivityWithProgress>> getActivity() {
     return activityRepository.getAll();
   }
 
+  /**
+   * The method get the list of exceptions and errors.
+   *
+   * @return throwable as an exception or error.
+   */
   public LiveData<Throwable> getThrowable() {
     return throwable;
   }
 
+  /**
+   * The method set the Id for an Activity.
+   */
   public void setActivityId(long id) {
     throwable.setValue(null);
     pending.add(
         activityRepository.get(id)
-        .subscribe(
-            this.activity::postValue,
-            this.throwable::postValue
-        )
+            .subscribe(
+                this.activity::postValue,
+                this.throwable::postValue
+            )
 
     );
   }
 
-   public void saveActivity(ActivityWithProgress activity) {
-     throwable.setValue(null);
-     pending.add(
-         activityRepository.save(activity)
-         .subscribe(
-             () -> {},
-             this.throwable::postValue
-         )
-     );
-   }
+  /**
+   * The method saves an Activity.
+   */
+  public void saveActivity(ActivityWithProgress activity) {
+    throwable.setValue(null);
+    pending.add(
+        activityRepository.save(activity)
+            .subscribe(
+                () -> {
+                },
+                this.throwable::postValue
+            )
+    );
+  }
+
+  /**
+   * The method deletes an Activity.
+   */
   public void deleteActivity(Activity activity) {
     throwable.setValue(null);
     pending.add(
         activityRepository.delete(activity)
             .subscribe(
-                () -> {},
+                () -> {
+                },
                 this.throwable::postValue
             )
     );
@@ -95,7 +137,7 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
 
   @OnLifecycleEvent(Event.ON_STOP)    //@ tells whatever task is in process trow it away
   private void clearPending() {
-     pending.clear();
+    pending.clear();
   }
 }
 

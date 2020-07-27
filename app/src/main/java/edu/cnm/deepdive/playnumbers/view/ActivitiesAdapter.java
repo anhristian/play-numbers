@@ -14,12 +14,22 @@ import edu.cnm.deepdive.playnumbers.model.entity.Activity;
 import edu.cnm.deepdive.playnumbers.view.ActivitiesAdapter.Holder;
 import java.util.List;
 
+/**
+ * The class receives a list of activities for the RecyclerView
+ */
 public class ActivitiesAdapter extends RecyclerView.Adapter<Holder> {
 
   private final Context context;
   private final List<? extends Activity> activities;
   private final OnClickListener listener;
 
+  /**
+   * The constructor passes in a context and a list of Activities to be inflated.
+   *
+   * @param context    for inflating activities.
+   * @param activities the list of activities.
+   * @param listener
+   */
   public ActivitiesAdapter(Context context,
       List<? extends Activity> activities, OnClickListener listener) {
     this.context = context;
@@ -53,7 +63,6 @@ public class ActivitiesAdapter extends RecyclerView.Adapter<Holder> {
     private Activity activity;
 
 
-
     private Holder(@NonNull View itemView) {
       super(itemView);
       root = itemView;
@@ -63,7 +72,7 @@ public class ActivitiesAdapter extends RecyclerView.Adapter<Holder> {
 
     }
 
-    private  void bind(int position) {
+    private void bind(int position) {
 
       activity = activities.get(position);
 
@@ -75,6 +84,9 @@ public class ActivitiesAdapter extends RecyclerView.Adapter<Holder> {
     }
   }
 
+  /**
+   * The interface used for a callback to be invoked when a view of an activity is clicked.
+   */
   public interface OnClickListener {
 
     void onClick(View v, int position, Activity activity);

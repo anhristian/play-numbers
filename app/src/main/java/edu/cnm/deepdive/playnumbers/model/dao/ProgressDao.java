@@ -12,6 +12,10 @@ import io.reactivex.Single;
 import java.util.Collection;
 import java.util.List;
 
+/**
+ * The interface implements all functionality for inserting, deleting, updating, and querying the
+ * Progress Object from the database.
+ */
 @Dao
 public interface ProgressDao {
 
