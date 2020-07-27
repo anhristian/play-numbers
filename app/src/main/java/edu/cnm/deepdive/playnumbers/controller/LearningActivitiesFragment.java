@@ -37,7 +37,7 @@ public class LearningActivitiesFragment extends Fragment {
   private Type type;
 
   /**
-   * This method create a new instance of a fragment and setting the arguments to that fragment.
+   * Creates a new instance of a fragment and setting the arguments to that fragment.
    *
    * @param type of arguments passed to the fragment.
    * @return fragment of a LearningActivities type.

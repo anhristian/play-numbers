@@ -39,7 +39,7 @@ public abstract class LearningActivityFragment extends Fragment {
   public abstract int getLayoutId();
 
   /**
-   * The class represents a fixed set of constants for Event types.
+   * Represents a fixed set of constants for Event types.
    */
   public enum Event {
     START,

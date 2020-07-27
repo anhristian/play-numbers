@@ -1,0 +1,3 @@
+name, type, className
+"Match the number", MATCHING, "edu.cnm.deepdive.playnumbers.controller.MatchingNumberFragment"
+"Find the missing number", MISSING, "edu.cnm.deepdive.playnumbers.controller.MissingNumberFragment"

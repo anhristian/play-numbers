@@ -94,4 +94,4 @@ says back to the child the number he selected, and gives short encouraging expre
 
   
 ###### [MainViewModel class](https://github.com/anhristian/play-numbers/tree/master/app/src/main/java/edu/cnm/deepdive/playnumbers/viewmodel)
-   
+#####  [JavaDocs](api/) 
