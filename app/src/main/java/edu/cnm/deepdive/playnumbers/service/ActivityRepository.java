@@ -15,6 +15,9 @@ import io.reactivex.schedulers.Schedulers;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * The class holds methods to get, insert, delete the activities with progress.
+ */
 public class ActivityRepository {
 
   private final Context context;
@@ -22,6 +25,11 @@ public class ActivityRepository {
   private final ActivityDao activityDao;
   private final ProgressDao progressDao;
 
+  /**
+   * The constructor set the context by getting an instance from database.
+   *
+   * @param context activity with progress context
+   */
   public ActivityRepository(Context context) {
     this.context = context;
     database = PlayNumbersDatabase.getInstance();
@@ -29,20 +37,42 @@ public class ActivityRepository {
     progressDao = database.getProgressDao();
   }
 
+  /**
+   * The method gets a list of all activities.
+   *
+   * @return List of all activities with progress.
+   */
   public LiveData<List<ActivityWithProgress>> getAll() {
     return activityDao.selectAll();
   }
 
+  /**
+   * The method gets a single activity by Id.
+   *
+   * @param id of activity with progress
+   * @return Id of a single activity.
+   */
   public Single<ActivityWithProgress> get(long id) {
     return activityDao.selectedById(id)
         .subscribeOn(Schedulers.io());
 
   }
 
+  /**
+   * The method gets the type of the activity.
+   *
+   * @return List of types of activities.
+   */
   public LiveData<List<ActivityWithProgress>> get(Type type) {
     return activityDao.selectByType(type);
   }
 
+  /**
+   * The method save the activity or update an existing one and set the progress correspondingly.
+   *
+   * @param activity that is saved/updated.
+   * @return saved or update activity with its progress.
+   */
   @Transaction
   public Completable save(ActivityWithProgress activity) {
     if (activity.getId() == 0) {
@@ -81,6 +111,12 @@ public class ActivityRepository {
     }
   }
 
+  /**
+   * The method holds the removing of the activity.
+   *
+   * @param activity that is removed.
+   * @return no activity
+   */
   public Completable delete(Activity activity) {
     if (activity.getId() == 0) {
       return Completable.fromAction(() -> {

@@ -9,6 +9,9 @@ import androidx.annotation.Nullable;
 import edu.cnm.deepdive.playnumbers.R;
 import edu.cnm.deepdive.playnumbers.model.entity.Activity.Type;
 
+/**
+ * The class hosts the actions that are implemented on the activity matchingNumbers.
+ */
 public class MatchingNumberFragment extends LearningActivityFragment {
 
   @Nullable

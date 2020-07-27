@@ -10,7 +10,9 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 import edu.cnm.deepdive.playnumbers.R;
 import edu.cnm.deepdive.playnumbers.model.entity.Activity.Type;
 
-
+/**
+ * The class hosts the actions that are implemented on the activity missingNumbers.
+ */
 public class MissingNumberFragment extends LearningActivityFragment {
 
   @Nullable

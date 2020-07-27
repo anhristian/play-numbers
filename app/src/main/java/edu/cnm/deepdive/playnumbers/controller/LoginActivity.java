@@ -8,8 +8,14 @@ import android.os.Bundle;
 import edu.cnm.deepdive.playnumbers.R;
 import edu.cnm.deepdive.playnumbers.service.GoogleSignInService;
 
+/**
+ * The class implements the Login activity in the application.
+ */
 public class LoginActivity extends AppCompatActivity {
 
+  /**
+   * The field defines a constant with assigned value of characters.
+   */
   private static final int LOGIN_REQUEST_CODE = 1000;
 
   private GoogleSignInService service;
@@ -41,11 +47,11 @@ public class LoginActivity extends AppCompatActivity {
     }
   }
 
-    private void switchToMain() {
-      Intent intent = new Intent(this, MainActivity.class);
-      intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-      startActivity(intent);
+  private void switchToMain() {
+    Intent intent = new Intent(this, MainActivity.class);
+    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+    startActivity(intent);
 
 
-    }
+  }
 }

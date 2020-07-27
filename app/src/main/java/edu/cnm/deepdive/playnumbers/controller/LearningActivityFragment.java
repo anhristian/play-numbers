@@ -9,6 +9,10 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import edu.cnm.deepdive.playnumbers.model.entity.Activity;
 
+/**
+ * The class provides the ability to store Activity objects in the database and retrieve them from
+ * it.
+ */
 public abstract class LearningActivityFragment extends Fragment {
 
   private View root;
@@ -20,20 +24,32 @@ public abstract class LearningActivityFragment extends Fragment {
       @Nullable Bundle savedInstanceState) {
 
     root = inflater.inflate(getLayoutId(), container,
-        false);                        //a subclass is created will now will inflate this class
+        false);
     return root;
   }
 
-  public abstract Activity.Type getType();                  //every time add activity is a subclass
+  /**
+   * The method get the type of activity and the body of it is provided by the subclass.
+   */
+  public abstract Activity.Type getType();
 
+  /**
+   * The method get the layout id to be inflated lately.
+   */
   public abstract int getLayoutId();
 
+  /**
+   * The class represents a fixed set of constants for Event types.
+   */
   public enum Event {
     START,
     PAUSE,
     COMPLETE
   }
 
+  /**
+   * The interface represents the passing of a reference of Event.
+   */
   public interface CallBack {
 
     void onEvent(Event event);
