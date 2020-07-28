@@ -1,0 +1,11 @@
+edu.cnm.deepdive.playnumbers
+edu.cnm.deepdive.playnumbers.controller
+edu.cnm.deepdive.playnumbers.controller.ui.dashboard
+edu.cnm.deepdive.playnumbers.controller.ui.home
+edu.cnm.deepdive.playnumbers.controller.ui.notifications
+edu.cnm.deepdive.playnumbers.model.dao
+edu.cnm.deepdive.playnumbers.model.entity
+edu.cnm.deepdive.playnumbers.model.pojo
+edu.cnm.deepdive.playnumbers.service
+edu.cnm.deepdive.playnumbers.view
+edu.cnm.deepdive.playnumbers.viewmodel
