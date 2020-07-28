@@ -84,6 +84,14 @@ says back to the child the number he selected, and gives short encouraging expre
        
         * [Media player](https://developer.android.com/guide/topics/media/mediaplayer)
         
+##### How do I use it?
+   
+   * [Instructions](instructions.md)
+   
+   * [Copyrights & licenses](notice.md)
+        
+#####  [Java Docs](api/) 
+        
 ###### [Entity classes](https://github.com/anhristian/play-numbers/tree/master/app/src/main/java/edu/cnm/deepdive/playnumbers/model/entity)
 
 ###### [DAO interfaces](https://github.com/anhristian/play-numbers/tree/master/app/src/main/java/edu/cnm/deepdive/playnumbers/model/dao)
@@ -91,7 +99,3 @@ says back to the child the number he selected, and gives short encouraging expre
 ###### [POJO classes](https://github.com/anhristian/play-numbers/tree/master/app/src/main/java/edu/cnm/deepdive/playnumbers/model/pojo)
 
 ###### [Repository classes and Database class](https://github.com/anhristian/play-numbers/tree/master/app/src/main/java/edu/cnm/deepdive/playnumbers/service)
-
-###### [MainViewModel class](https://github.com/anhristian/play-numbers/tree/master/app/src/main/java/edu/cnm/deepdive/playnumbers/viewmodel)
-
-#####  [JavaDocs](api/) 
