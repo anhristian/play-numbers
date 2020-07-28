@@ -18,11 +18,7 @@
     android:padding="@dimen/half_margin"
     android:background="?attr/selectableItemBackground"
     android:orientation="vertical">
-<!--
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent">
--->
+
     <ImageView
       android:id="@+id/activity_image"
       android:layout_width="40dp"
@@ -30,10 +26,6 @@
       android:layout_margin="@dimen/half_margin"
       android:layout_gravity="start"
       />
-<!--      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toStartOf="@id/activity_name"-->
 
     <TextView
       android:id="@+id/activity_name"
@@ -43,10 +35,7 @@
       android:layout_margin="@dimen/half_margin"
       android:gravity="start"
       android:text="@string/activity_title"/>
-<!--      app:layout_constraintStart_toEndOf="@id/activity_image"
-      app:layout_constraintEnd_toStartOf="@id/activity_progress"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintBottom_toBottomOf="parent"/>-->
+
 
 
     <ProgressBar
@@ -57,10 +46,7 @@
       android:layout_margin="@dimen/half_margin"
       android:layout_gravity="end"
       style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
-<!--      app:layout_constraintStart_toEndOf="@id/activity_name"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintBottom_toBottomOf="parent"/>-->
+
 
   </LinearLayout>
 

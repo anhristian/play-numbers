@@ -12,7 +12,7 @@ import edu.cnm.deepdive.playnumbers.model.entity.Activity.Type;
 /**
  * Hosts the actions that are implemented on the activity matchingNumbers.
  */
-public class MatchingNumberFragment extends LearningActivityFragment {
+public class HighMatchingNumberFragment extends LearningActivityFragment {
 
   @Nullable
   @Override
@@ -30,7 +30,7 @@ public class MatchingNumberFragment extends LearningActivityFragment {
 
   @Override
   public int getLayoutId() {
-    return R.layout.fragment_matching_number;
+    return R.layout.fragment_high_matching_number;
   }
 
   //TODO Use Toast to display the "correct",  "wrong" + textSpeech.
