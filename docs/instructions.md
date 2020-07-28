@@ -14,12 +14,14 @@
    ![Home screen](img/home_screen.png). 
     
    * Chosen type of activity will lead to and screen with the list of activities of that type. 
-      Currently, the screen show just the fragment of a future activity in the list of Matching Numbers and as well for Missing Numbers. 
+    Currently, the screen show just the fragment of a future activity in the list of Matching Numbers 
+    and as well for Missing Numbers. 
       
       ![Activities List](img/type_activity.png).
       
-   *  Pressing the activity will lead the user to the screen with an actual activity. 
-      The activity consists on connecting the number with the right image. 
-      Currently, it is a empty fragment that will be filled with data. 
+   *  By pressing the chosen type of activity, it will lead the user to the screen with an actual activity. 
+      For the **Matching Numbers**, the activity consists on connecting the number with the right image.
+      For the **Missing Numbers**, the activity consists on dragging the number in its right place. 
+      Currently, both screens are an empty fragment that will be filled with data. 
       
-      ![Actual activity](img/activity_screen.png) 
+      ![Matching Number](img/activity_screen.png) ![Missing Number](img/missing_number.png)
