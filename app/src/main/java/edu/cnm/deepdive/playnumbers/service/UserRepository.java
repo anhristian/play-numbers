@@ -20,7 +20,7 @@ public class UserRepository {
   private final UserDao userDao;
 
   /**
-   * The constructor set the context by getting an instance from database.
+   * Sets the context by getting an instance from database.
    *
    * @param context user context
    */
@@ -31,7 +31,7 @@ public class UserRepository {
   }
 
   /**
-   * The method gets a list of all users.
+   * Returns a list of all users.
    *
    * @return users list.
    */
@@ -40,7 +40,7 @@ public class UserRepository {
   }
 
   /**
-   * The method gets a single user by its id.
+   * Returns a single user by its id.
    *
    * @param id by which a user is selected
    * @return user's id.
@@ -51,7 +51,7 @@ public class UserRepository {
   }
 
   /**
-   * The method save a new user or update an existing one.
+   * Saves a new user or update an existing one.
    *
    * @param user which is going to be saved or updated.
    * @return inserted or updated user.
@@ -69,7 +69,7 @@ public class UserRepository {
   }
 
   /**
-   * The method delete an existing user.
+   * Deletes an existing user.
    *
    * @param user which is going to be removed.
    * @return no user.

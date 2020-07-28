@@ -6,7 +6,7 @@ import edu.cnm.deepdive.playnumbers.model.entity.User;
 import java.util.List;
 
 /**
- * The class defines the User and Progress entities and contain the getter and setter methods.
+ * Implements the User and Progress entities. It contains the getter and setter methods.
  */
 public class UserWithProgress extends User {
 
@@ -14,7 +14,7 @@ public class UserWithProgress extends User {
   private List<Progress> progresses; //one user has a list of progresses
 
   /**
-   * Method used to get the list of progresses for user.
+   * Returns the list of progresses for user.
    *
    * @return The list of progresses.
    */
@@ -23,7 +23,7 @@ public class UserWithProgress extends User {
   }
 
   /**
-   * The method set the progresses for user in a list.
+   * Sets the progresses for user in a list.
    */
   public void setProgresses(List<Progress> progresses) {
     this.progresses = progresses;

@@ -92,6 +92,6 @@ says back to the child the number he selected, and gives short encouraging expre
 
 ###### [Repository classes and Database class](https://github.com/anhristian/play-numbers/tree/master/app/src/main/java/edu/cnm/deepdive/playnumbers/service)
 
-  
 ###### [MainViewModel class](https://github.com/anhristian/play-numbers/tree/master/app/src/main/java/edu/cnm/deepdive/playnumbers/viewmodel)
+
 #####  [JavaDocs](api/) 

@@ -1,14 +1,13 @@
 package edu.cnm.deepdive.playnumbers.controller;
 
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 import edu.cnm.deepdive.playnumbers.R;
@@ -18,15 +17,14 @@ import edu.cnm.deepdive.playnumbers.model.entity.Activity;
 import edu.cnm.deepdive.playnumbers.model.entity.Activity.Type;
 import edu.cnm.deepdive.playnumbers.view.ActivitiesAdapter;
 import edu.cnm.deepdive.playnumbers.viewmodel.MainViewModel;
-import java.lang.reflect.Constructor;
 
 /**
- * The class sets the behavior of the Fragment that contains the activities .
+ * Contains the behavior of the Fragment with the activities .
  */
 public class LearningActivitiesFragment extends Fragment {
 
   /**
-   * This field defines and assigns the variable of type String inside this class.
+   * Defines and assigns the variable of type String inside this class.
    */
   public static final String TYPE_KEY = "type";
 
@@ -37,7 +35,7 @@ public class LearningActivitiesFragment extends Fragment {
   private Type type;
 
   /**
-   * Creates a new instance of a fragment and setting the arguments to that fragment.
+   * Creates a new instance of a fragment and puts the arguments to that fragment.
    *
    * @param type of arguments passed to the fragment.
    * @return fragment of a LearningActivities type.

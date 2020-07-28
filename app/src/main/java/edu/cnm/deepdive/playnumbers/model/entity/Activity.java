@@ -9,8 +9,7 @@ import androidx.room.PrimaryKey;
 import androidx.room.TypeConverter;
 
 /**
- * The class provides the ability to store Activity objects in the database and retrieve them from
- * it.
+ * Provides the ability to store Activity objects in the database and retrieve them from it.
  */
 @Entity(
     indices = {
@@ -38,7 +37,7 @@ public class Activity {
   private Type type;
 
   /**
-   * Method used to get the activity's id.
+   * Returns the activity's id.
    *
    * @return a long containing the value for Id.
    */
@@ -47,14 +46,14 @@ public class Activity {
   }
 
   /**
-   * Method used to set the activity's id.
+   * Sets the activity's id.
    */
   public void setId(long id) {
     this.id = id;
   }
 
   /**
-   * Method used to get the activity's name.
+   * Returns the activity's name.
    *
    * @return a String representing the activity's name.
    */
@@ -64,14 +63,14 @@ public class Activity {
   }
 
   /**
-   * Method used to set the activity's name.
+   * Sets the activity's name.
    */
   public void setName(@NonNull String name) {
     this.name = name;
   }
 
   /**
-   * Method used to get the activity's level.
+   * Returns the activity's level.
    *
    * @return an int containing the activity's level.
    */
@@ -80,14 +79,14 @@ public class Activity {
   }
 
   /**
-   * Method used to set the activity's level.
+   * Sets the activity's level.
    */
   public void setLevel(int level) {
     this.level = level;
   }
 
   /**
-   * Method used to get the activity's class name.
+   * Returns the activity's class name.
    *
    * @return a String representing the activity's class name.
    */
@@ -97,14 +96,14 @@ public class Activity {
   }
 
   /**
-   * Method used to set the activity's class name.
+   * Sets the activity's class name.
    */
   public void setClassName(@NonNull String className) {
     this.className = className;
   }
 
   /**
-   * Method used to get the activity's type.
+   * Returns the activity's type.
    *
    * @return the activity type.
    */
@@ -114,7 +113,7 @@ public class Activity {
   }
 
   /**
-   * Method used to set the activity's type.
+   * Sets the activity's type.
    */
   public void setType(@NonNull Type type) {
     this.type = type;
@@ -127,8 +126,8 @@ public class Activity {
     MATCHING, MISSING;
 
     /**
-     * The method provides conversion between classes Type and Integer for an easier mapping of
-     * their instances.
+     * Returns the conversion between classes Type and Integer for an easier mapping of their
+     * instances.
      *
      * @param value represents the Type's input.
      * @return an Integer value for Type
@@ -139,8 +138,8 @@ public class Activity {
     }
 
     /**
-     * The method provides conversion between classes Integer and Type for an easier mapping of
-     * their instances.
+     * Returns the conversion between classes Integer and Type for an easier mapping of their
+     * instances.
      *
      * @param value represents the Integer's input.
      * @return the Type value for an Integer.

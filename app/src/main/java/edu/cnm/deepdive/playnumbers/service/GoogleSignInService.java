@@ -45,7 +45,7 @@ public class GoogleSignInService {
   }
 
   /**
-   * Gets the instance.
+   * Returns the instance of GoogleSingInService.
    *
    * @return GoogleSignInService instance.
    */

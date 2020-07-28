@@ -6,8 +6,8 @@ import edu.cnm.deepdive.playnumbers.model.entity.Progress;
 import java.util.List;
 
 /**
- * The class defines the Activity and Progress entities together, Progress entity being a dependable
- * child and contain the getter and setter methods.
+ * Implements the Activity and Progress entities together. Progress entity is a dependable child and
+ * contain the getter and setter methods.
  */
 public class ActivityWithProgress extends Activity {
 
@@ -15,7 +15,7 @@ public class ActivityWithProgress extends Activity {
   private List<Progress> progress; //type of field as a list.
 
   /**
-   * Method used to get the list of progress for a specific activity.
+   * Returns the list of progress for a specific activity.
    *
    * @return The list of progresses.
    */
@@ -24,7 +24,7 @@ public class ActivityWithProgress extends Activity {
   }
 
   /**
-   * The method set the progresses for activities in a list.
+   * Sets the progresses for activities in a list.
    */
   public void setProgress(List<Progress> progress) {
     this.progress = progress;

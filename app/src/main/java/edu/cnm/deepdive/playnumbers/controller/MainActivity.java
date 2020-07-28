@@ -21,7 +21,7 @@ import edu.cnm.deepdive.playnumbers.service.GoogleSignInService;
 import edu.cnm.deepdive.playnumbers.viewmodel.MainViewModel;
 
 /**
- * The class implements the navigation part of the application.
+ * Implements the navigation part of the application.
  */
 public class MainActivity extends AppCompatActivity
     implements BottomNavigationView.OnNavigationItemSelectedListener {

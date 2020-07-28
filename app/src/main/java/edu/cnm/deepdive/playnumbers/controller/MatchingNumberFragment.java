@@ -10,7 +10,7 @@ import edu.cnm.deepdive.playnumbers.R;
 import edu.cnm.deepdive.playnumbers.model.entity.Activity.Type;
 
 /**
- * The class hosts the actions that are implemented on the activity matchingNumbers.
+ * Hosts the actions that are implemented on the activity matchingNumbers.
  */
 public class MatchingNumberFragment extends LearningActivityFragment {
 
@@ -32,6 +32,6 @@ public class MatchingNumberFragment extends LearningActivityFragment {
   public int getLayoutId() {
     return R.layout.fragment_matching_number;
   }
-  //Use a switch statement for setting the right answers.
-  //maybe Use toast to display the "correct",  "wrong" + textSpeech.
+
+  //TODO Use Toast to display the "correct",  "wrong" + textSpeech.
 }

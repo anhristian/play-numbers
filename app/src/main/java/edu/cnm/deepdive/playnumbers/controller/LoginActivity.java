@@ -1,20 +1,20 @@
 package edu.cnm.deepdive.playnumbers.controller;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
 import edu.cnm.deepdive.playnumbers.R;
 import edu.cnm.deepdive.playnumbers.service.GoogleSignInService;
 
 /**
- * The class implements the Login activity in the application.
+ * Implements the Login activity in the application.
  */
 public class LoginActivity extends AppCompatActivity {
 
   /**
-   * The field defines a constant with assigned value of characters.
+   * Defines a constant with assigned value of characters.
    */
   private static final int LOGIN_REQUEST_CODE = 1000;
 

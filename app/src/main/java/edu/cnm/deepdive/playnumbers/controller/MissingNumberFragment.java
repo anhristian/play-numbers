@@ -6,12 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 import edu.cnm.deepdive.playnumbers.R;
 import edu.cnm.deepdive.playnumbers.model.entity.Activity.Type;
 
 /**
- * The class hosts the actions that are implemented on the activity missingNumbers.
+ * Hosts the actions that are implemented on the activity missingNumbers.
  */
 public class MissingNumberFragment extends LearningActivityFragment {
 

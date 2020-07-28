@@ -16,7 +16,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * The class holds methods to get, insert, delete the activities with progress.
+ * Holds methods to get, insert, delete the activities with progress.
  */
 public class ActivityRepository {
 
@@ -26,7 +26,7 @@ public class ActivityRepository {
   private final ProgressDao progressDao;
 
   /**
-   * The constructor set the context by getting an instance from database.
+   * Sets the context by getting an instance from database.
    *
    * @param context activity with progress context
    */
@@ -38,7 +38,7 @@ public class ActivityRepository {
   }
 
   /**
-   * The method gets a list of all activities.
+   * Returns a list of all activities.
    *
    * @return List of all activities with progress.
    */
@@ -47,7 +47,7 @@ public class ActivityRepository {
   }
 
   /**
-   * The method gets a single activity by Id.
+   * Returns a single activity by Id.
    *
    * @param id of activity with progress
    * @return Id of a single activity.
@@ -59,7 +59,7 @@ public class ActivityRepository {
   }
 
   /**
-   * The method gets the type of the activity.
+   * Returns the type of the activity.
    *
    * @return List of types of activities.
    */
@@ -68,7 +68,7 @@ public class ActivityRepository {
   }
 
   /**
-   * The method save the activity or update an existing one and set the progress correspondingly.
+   * Saves the activity or updates an existing one and sets the progress correspondingly.
    *
    * @param activity that is saved/updated.
    * @return saved or update activity with its progress.

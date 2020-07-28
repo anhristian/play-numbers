@@ -16,8 +16,8 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * The interface implements all functionality for inserting, deleting, updating, and querying the
- * Activity Object from the database.
+ * Implements all functionality for inserting, deleting, updating, and querying the Activity Object
+ * from the database.
  */
 @Dao
 public interface ActivityDao {

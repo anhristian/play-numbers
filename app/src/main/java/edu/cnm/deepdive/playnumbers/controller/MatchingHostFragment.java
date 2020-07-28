@@ -10,8 +10,8 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
 /**
- * The class represents the inflation of a host fragment by creating a new class name that holds the
- * arguments of a child fragment and covering the appearing exceptions.
+ * Represents the inflation of a host fragment by creating a new class name. It holds the arguments
+ * of a child fragment and covering the appearing exceptions.
  */
 public class MatchingHostFragment extends Fragment {
 
@@ -36,7 +36,7 @@ public class MatchingHostFragment extends Fragment {
       return root;
     } catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException
         | java.lang.InstantiationException | InvocationTargetException e) {
-     throw new RuntimeException(e);
+      throw new RuntimeException(e);
     }
   }
 }

@@ -19,7 +19,7 @@ import io.reactivex.disposables.CompositeDisposable;
 import java.util.List;
 
 /**
- * The class holds and manages the UI-related data and expose the information via LiveData
+ * Holds and manages the UI-related data and expose the information via LiveData
  */
 public class MainViewModel extends AndroidViewModel implements LifecycleObserver {
 
@@ -32,7 +32,7 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
   private final LiveData<List<ActivityWithProgress>> activitiesForType;
 
   /**
-   * The constructor prepares for use the new object of Application.
+   * Prepares the new object of Application.
    *
    * @param application
    */
@@ -48,14 +48,14 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
   }
 
   /**
-   * The method set the Type of application
+   * Sets the Type of application
    */
   public void setType(Type type) {
     this.type.setValue(type);
   }
 
   /**
-   * The method get list of activities for type.
+   * Returns a list of activities for type.
    *
    * @return A list of LiveData of activities for specific type.
    */
@@ -64,7 +64,7 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
   }
 
   /**
-   * The method get the list of all users.
+   * Returns the list of all users.
    *
    * @return A list of LiveData of all users.
    */
@@ -73,7 +73,7 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
   }
 
   /**
-   * The method get the list of all activities.
+   * Returns the list of all activities.
    *
    * @return A list of LiveData of all activities.
    */
@@ -82,7 +82,7 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
   }
 
   /**
-   * The method get the list of exceptions and errors.
+   * Returns the list of exceptions and errors.
    *
    * @return throwable as an exception or error.
    */
@@ -91,7 +91,7 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
   }
 
   /**
-   * The method set the Id for an Activity.
+   * Sets the Id for an Activity.
    */
   public void setActivityId(long id) {
     throwable.setValue(null);
@@ -106,7 +106,7 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
   }
 
   /**
-   * The method saves an Activity.
+   * Saves an Activity.
    */
   public void saveActivity(ActivityWithProgress activity) {
     throwable.setValue(null);
@@ -121,7 +121,7 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
   }
 
   /**
-   * The method deletes an Activity.
+   * Deletes an Activity.
    */
   public void deleteActivity(Activity activity) {
     throwable.setValue(null);
@@ -135,7 +135,7 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
     );
   }
 
-  @OnLifecycleEvent(Event.ON_STOP)    //@ tells whatever task is in process trow it away
+  @OnLifecycleEvent(Event.ON_STOP)
   private void clearPending() {
     pending.clear();
   }

@@ -9,8 +9,7 @@ import androidx.room.PrimaryKey;
 import java.util.Date;
 
 /**
- * The class provides the ability to store Progress objects in the database and retrieve them from
- * it.
+ * Implements the ability to store Progress objects in the database and retrieve them from it.
  */
 @Entity(foreignKeys = {
     @ForeignKey(
@@ -45,7 +44,7 @@ public class Progress {
   private Date end;
 
   /**
-   * Method used to get the progress's id.
+   * Returns the progress's id.
    *
    * @return a long containing the value for progress.
    */
@@ -54,14 +53,14 @@ public class Progress {
   }
 
   /**
-   * Method used to set the progress's id.
+   * Sets the progress's id.
    */
   public void setId(long id) {
     this.id = id;
   }
 
   /**
-   * Method used to get the activity's id for the corresponding progress.
+   * Returns the activity's id for the corresponding progress.
    *
    * @return a long containing the activity's id.
    */
@@ -70,14 +69,14 @@ public class Progress {
   }
 
   /**
-   * Method used to set the activity's id for the corresponding progress.
+   * Sets the activity's id for the corresponding progress.
    */
   public void setActivityId(Long activityId) {
     this.activityId = activityId;
   }
 
   /**
-   * Method used to get the user's id for the corresponding progress.
+   * Returns the user's id for the corresponding progress.
    *
    * @return a long containing the user's id.
    */
@@ -86,14 +85,14 @@ public class Progress {
   }
 
   /**
-   * Method used to set the user's id for the corresponding progress.
+   * Sets the user's id for the corresponding progress.
    */
   public void setUserId(Long userId) {
     this.userId = userId;
   }
 
   /**
-   * Method used to get the start date for the corresponding progress.
+   * Returns the start date for the corresponding progress.
    *
    * @return a date for progress's start.
    */
@@ -103,14 +102,14 @@ public class Progress {
   }
 
   /**
-   * Method used to set the start date for the corresponding progress.
+   * Sets the start date for the corresponding progress.
    */
   public void setStart(@NonNull Date start) {
     this.start = start;
   }
 
   /**
-   * Method used to get the end date for the corresponding progress.
+   * Returns the end date for the corresponding progress.
    *
    * @return a date for progress's end.
    */
@@ -119,7 +118,7 @@ public class Progress {
   }
 
   /**
-   * Method used to set the end date for the corresponding progress.
+   * Sets the end date for the corresponding progress.
    */
   public void setEnd(Date end) {
     this.end = end;

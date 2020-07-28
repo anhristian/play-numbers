@@ -1,7 +1,6 @@
 package edu.cnm.deepdive.playnumbers.service;
 
 import android.app.Application;
-import android.app.ListActivity;
 import android.content.Context;
 import androidx.annotation.NonNull;
 import androidx.room.Database;
@@ -32,7 +31,7 @@ import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 
 /**
- * A RoomDatabase subclass holding all the data from Entities an database version.
+ * Holds all the data from Entities an database version.
  */
 @Database(
     entities = {User.class, Activity.class, Progress.class},
@@ -54,22 +53,22 @@ public abstract class PlayNumbersDatabase extends RoomDatabase {
   }
 
   /**
-   * Get a reference to room implof UserDao to get it from database.
+   * Returns a reference to Room's implementation of the UserDao.
    */
   public abstract UserDao getUserDao();
 
   /**
-   * Sets reference of ActivityDao to get it from database.
+   * Returns a reference to Room's implementation of the ActivityDao.
    */
   public abstract ActivityDao getActivityDao();
 
   /**
-   * Sets reference of ProgressDao to get it from database.
+   * Returns a reference to Room's implementation of the ProgressDao.
    */
   public abstract ProgressDao getProgressDao();
 
   /**
-   * Obtains an instanceHolder from database.
+   * Returns an instanceHolder from database.
    *
    * @return database instance.
    */
@@ -87,7 +86,8 @@ public abstract class PlayNumbersDatabase extends RoomDatabase {
   }
 
   private static class PlayNumbersCallBack extends Callback {
-  private final Context context;
+
+    private final Context context;
 
     private PlayNumbersCallBack(Context context) {
       this.context = context;
@@ -101,7 +101,7 @@ public abstract class PlayNumbersDatabase extends RoomDatabase {
           Reader reader = new InputStreamReader(input);
           CSVParser parser = new CSVParser(reader, CSVFormat.EXCEL.withIgnoreEmptyLines()
               .withIgnoreSurroundingSpaces().withFirstRecordAsHeader());
-       ) {
+      ) {
         List<Activity> activities = new LinkedList<>();
         for (CSVRecord record : parser) {
           Activity activity = new Activity();
@@ -117,25 +117,6 @@ public abstract class PlayNumbersDatabase extends RoomDatabase {
       } catch (IOException e) {
         throw new RuntimeException(e);
       }
-      /*Activity activityMatching = new Activity();
-      activityMatching
-          .setClassName("edu.cnm.deepdive.playnumbers.controller.MatchingNumberFragment");
-      activityMatching.setType(Type.MATCHING);
-      activityMatching.setLevel(1);
-      activityMatching.setName("Match the number");
-      PlayNumbersDatabase.getInstance().getActivityDao().insert(activityMatching)
-          .subscribeOn(Schedulers.io())  //this part use the ReactiveX
-          .subscribe(); //this line put in db the fragment with numbers. talking to a view model
-
-      Activity activityMissing = new Activity();
-      activityMissing.setClassName("edu.cnm.deepdive.playnumbers.controller.MissingNumberFragment");
-      activityMissing.setType(Type.MISSING);
-      activityMissing.setLevel(1);
-      activityMissing.setName("Find the missing number");
-      PlayNumbersDatabase.getInstance().getActivityDao().insert(activityMissing)
-          .subscribeOn(Schedulers.io())
-          .subscribe();*/
-
     }
   }
 

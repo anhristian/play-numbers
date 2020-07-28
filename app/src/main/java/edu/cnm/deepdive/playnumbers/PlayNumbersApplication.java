@@ -7,8 +7,7 @@ import edu.cnm.deepdive.playnumbers.service.PlayNumbersDatabase;
 import io.reactivex.schedulers.Schedulers;
 
 /**
- * The class extents Application and initialize Stetho that gives access for inspecting the
- * database.
+ * Extends Application and initializes Stetho that gives access for inspecting the database.
  */
 public class PlayNumbersApplication extends Application {
 

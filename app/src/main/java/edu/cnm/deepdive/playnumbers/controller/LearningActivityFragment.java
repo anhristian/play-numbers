@@ -10,8 +10,7 @@ import androidx.fragment.app.Fragment;
 import edu.cnm.deepdive.playnumbers.model.entity.Activity;
 
 /**
- * The class provides the ability to store Activity objects in the database and retrieve them from
- * it.
+ * Provides the ability to store Activity objects in the database and retrieves them from it.
  */
 public abstract class LearningActivityFragment extends Fragment {
 
@@ -29,12 +28,12 @@ public abstract class LearningActivityFragment extends Fragment {
   }
 
   /**
-   * The method get the type of activity and the body of it is provided by the subclass.
+   * Returns a reference of type of activity.
    */
   public abstract Activity.Type getType();
 
   /**
-   * The method get the layout id to be inflated lately.
+   * Returnst the layout's id to be inflated lately.
    */
   public abstract int getLayoutId();
 
@@ -48,7 +47,7 @@ public abstract class LearningActivityFragment extends Fragment {
   }
 
   /**
-   * The interface represents the passing of a reference of Event.
+   * Represents the reference passed to the Event.
    */
   public interface CallBack {
 
