@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,13 +20,16 @@ import androidx.navigation.ui.NavigationUI;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import edu.cnm.deepdive.playnumbers.R;
 import edu.cnm.deepdive.playnumbers.service.GoogleSignInService;
+import edu.cnm.deepdive.playnumbers.service.PermissionsService;
 import edu.cnm.deepdive.playnumbers.viewmodel.MainViewModel;
+import java.util.LinkedList;
 
 /**
  * Implements the navigation part of the application.
  */
 public class MainActivity extends AppCompatActivity
     implements BottomNavigationView.OnNavigationItemSelectedListener {
+
 
   private GoogleSignInService signInService;
   private NavController navController;

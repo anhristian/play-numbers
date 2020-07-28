@@ -54,8 +54,6 @@ says back to the child the number he selected, and gives short encouraging expre
    * [Wireframe diagram](wireframe.md)
    * [Entity-relationship diagram](erd.md)
    
-###### [Data Definition Language (DDL)](https://github.com/anhristian/play-numbers/blob/master/docs/sql/ddl.sql)        
-
 ## Technical requirements & dependencies
 
   This app was tested on an emulator Pixel 3 API 28, and the minimum required is API 21. The restriction I am aware of at this moment is the landscape orientation.
@@ -89,8 +87,12 @@ says back to the child the number he selected, and gives short encouraging expre
    * [Instructions](instructions.md)
    
    * [Copyrights & licenses](notice.md)
+   
+##### [Repository](https://github.com/anhristian/play-numbers)
+
+###### [Data Definition Language (DDL)](https://github.com/anhristian/play-numbers/blob/master/docs/sql/ddl.sql)        
         
-#####  [Java Docs](api/) 
+######  [Java Docs](api/) 
         
 ###### [Entity classes](https://github.com/anhristian/play-numbers/tree/master/app/src/main/java/edu/cnm/deepdive/playnumbers/model/entity)
 

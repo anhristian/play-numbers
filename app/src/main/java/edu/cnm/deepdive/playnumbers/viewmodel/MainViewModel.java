@@ -30,6 +30,7 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
   private final MutableLiveData<ActivityWithProgress> activity;
   private final MutableLiveData<Type> type;
   private final LiveData<List<ActivityWithProgress>> activitiesForType;
+  private final MutableLiveData<Boolean> permissionsChecked;
 
   /**
    * Prepares the new object of Application.
@@ -45,6 +46,7 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
     activity = new MutableLiveData<>();
     type = new MutableLiveData<>();
     activitiesForType = Transformations.switchMap(type, activityRepository::get);
+    permissionsChecked = new MutableLiveData<>(false);
   }
 
   /**
@@ -89,6 +91,15 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
   public LiveData<Throwable> getThrowable() {
     return throwable;
   }
+
+  public LiveData<Boolean> getPermissionsChecked() {
+    return permissionsChecked;
+  }
+
+  public void setPermissionsChecked(boolean checked) {
+    permissionsChecked.setValue(checked);
+  }
+
 
   /**
    * Sets the Id for an Activity.
