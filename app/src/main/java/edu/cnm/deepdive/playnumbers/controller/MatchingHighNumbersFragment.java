@@ -11,7 +11,7 @@ import edu.cnm.deepdive.playnumbers.R;
 import edu.cnm.deepdive.playnumbers.model.entity.Activity.Type;
 
 /**
- * Hosts the actions that are implemented on the activity matchingNumbers for low numbers.
+ * Hosts the actions that are implemented on the activity matchingNumbers for high numbers.
  */
 public class MatchingHighNumbersFragment extends LearningActivityFragment {
 
