@@ -1,4 +1,4 @@
 name, type, className
-"Match the number from 1 to 5", MATCHING, "edu.cnm.deepdive.playnumbers.controller.HighMatchingNumberFragment"
-"Match the number from 6 to 10", MATCHING, "edu.cnm.deepdive.playnumbers.controller.LowMatchingNumberFragment"
+"Match the number from 1 to 5", MATCHING, "edu.cnm.deepdive.playnumbers.controller.MatchingLowNumbersFragment"
+"Match the number from 6 to 10", MATCHING, "edu.cnm.deepdive.playnumbers.controller.MatchingHighNumbersFragment"
 "Find the missing number", MISSING, "edu.cnm.deepdive.playnumbers.controller.MissingNumberFragment"
