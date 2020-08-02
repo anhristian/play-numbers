@@ -1,28 +1,29 @@
 package edu.cnm.deepdive.playnumbers.controller;
 
 import android.os.Bundle;
-import android.provider.ContactsContract.CommonDataKinds.Im;
+import android.speech.tts.TextToSpeech;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 import edu.cnm.deepdive.playnumbers.R;
 import edu.cnm.deepdive.playnumbers.model.entity.Activity.Type;
+import java.util.List;
 import java.util.Random;
 
 /**
  * Hosts the actions that are implemented on the activity match the low numbers.
  */
 public class MatchingLowNumbersFragment extends LearningActivityFragment
-implements View.OnClickListener{
+    implements View.OnClickListener {
+
+  public int correctAnswer;
+  public int progressStatus;
+  public Random random;
+  public List<Integer> list;
 
   private ImageButton button1;
   private ImageButton button2;
@@ -32,18 +33,20 @@ implements View.OnClickListener{
   private View root;
   private OnClickListener listener;
 
+  private TextToSpeech t1;
+
   @Nullable
   @Override
   public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
       @Nullable Bundle savedInstanceState) {
     //TODO DO any additional process to set this.
     //TODO Add Text to Speech.
-    View view = inflater.inflate(R.layout.fragment_matching_low_numbers,container, false);
+    View view = inflater.inflate(R.layout.fragment_matching_low_numbers, container, false);
+    view.findViewById(R.id.button_0).setOnClickListener(this);
     view.findViewById(R.id.button_1).setOnClickListener(this);
     view.findViewById(R.id.button_2).setOnClickListener(this);
     view.findViewById(R.id.button_3).setOnClickListener(this);
     view.findViewById(R.id.button_4).setOnClickListener(this);
-    view.findViewById(R.id.button_5).setOnClickListener(this);
     view.findViewById(R.id.count_image_1).setOnClickListener(this);
     view.findViewById(R.id.count_image_2).setOnClickListener(this);
     view.findViewById(R.id.count_image_3).setOnClickListener(this);
@@ -63,6 +66,8 @@ implements View.OnClickListener{
 
   }
 
+
+
   /*public void numbersRandom(ImageButton imageButton) {
     Random random = new Random();
     int image = ImageButton
@@ -80,8 +85,30 @@ implements View.OnClickListener{
 
   @Override
   public void onClick(View v) {
-    
-  }
 
-  //TODO Use Toast to display the "correct",  "wrong" + textSpeech.
+  }
 }
+
+
+/* if(!gamefinished){
+    list.add(rndInt);
+    String imgName = "i" + rndInt;
+    int id = getResources().getIdentifier(imgName, "drawable", getPackageName());
+    mainImage.setImageResource(id);
+    switch (imgName){//initialize correctAnswer
+      case "button1":
+        correctAnswer = count_image_1;
+        break;
+      case "button2":
+        correctAnswer = count_image_2;
+        break;
+      case "button3":
+        correctAnswer = count_image_3;
+        break;
+      case "button4":
+        correctAnswer = count_image_4;
+        break;
+      case "button5":
+        correctAnswer = count_image_5;
+        break;
+}*/

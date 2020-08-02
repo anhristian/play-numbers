@@ -8,7 +8,20 @@
   android:background="@android:color/holo_blue_light"
   tools:context=".controller.MatchingHighNumbersFragment">
 
-    <ImageButton
+    <ImageView
+      android:id="@+id/button_0"
+      android:layout_width="55dp"
+      android:layout_height="55dp"
+      android:layout_margin="8dp"
+      android:orientation="vertical"
+      android:src="@drawable/button_layers"
+      app:layout_constraintBottom_toTopOf="@id/button_1"
+      app:layout_constraintEnd_toEndOf="@id/vertical_guideline"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_chainStyle="packed"/>
+
+    <ImageView
       android:id="@+id/button_1"
       android:layout_width="55dp"
       android:layout_height="55dp"
@@ -17,10 +30,10 @@
       app:layout_constraintBottom_toTopOf="@id/button_2"
       app:layout_constraintEnd_toEndOf="@id/vertical_guideline"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/button_0"
       app:layout_constraintVertical_chainStyle="packed"/>
 
-    <ImageButton
+    <ImageView
       android:id="@+id/button_2"
       android:layout_width="55dp"
       android:layout_height="55dp"
@@ -32,7 +45,7 @@
       app:layout_constraintTop_toBottomOf="@id/button_1"
       app:layout_constraintVertical_chainStyle="packed"/>
 
-    <ImageButton
+    <ImageView
       android:id="@+id/button_3"
       android:layout_width="55dp"
       android:layout_height="55dp"
@@ -44,20 +57,8 @@
       app:layout_constraintTop_toBottomOf="@id/button_2"
       app:layout_constraintVertical_chainStyle="packed"/>
 
-    <ImageButton
+    <ImageView
       android:id="@+id/button_4"
-      android:layout_width="55dp"
-      android:layout_height="55dp"
-      android:layout_margin="8dp"
-      android:orientation="vertical"
-      app:layout_constraintBottom_toTopOf="@id/button_5"
-      app:layout_constraintEnd_toEndOf="@id/vertical_guideline"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/button_3"
-      app:layout_constraintVertical_chainStyle="packed"/>
-
-    <ImageButton
-      android:id="@+id/button_5"
       android:layout_width="55dp"
       android:layout_height="55dp"
       android:layout_margin="8dp"
@@ -65,7 +66,7 @@
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="@id/vertical_guideline"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/button_4"
+      app:layout_constraintTop_toBottomOf="@id/button_3"
       app:layout_constraintVertical_chainStyle="packed"/>
 
     <androidx.constraintlayout.widget.Guideline
