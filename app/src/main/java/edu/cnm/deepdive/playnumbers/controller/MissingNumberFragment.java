@@ -1,9 +1,6 @@
 package edu.cnm.deepdive.playnumbers.controller;
 
-import android.content.SharedPreferences;
-import android.content.res.Resources;
 import android.os.Bundle;
-import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -12,7 +9,6 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.view.GestureDetectorCompat;
-import androidx.recyclerview.widget.RecyclerView;
 import edu.cnm.deepdive.playnumbers.R;
 import edu.cnm.deepdive.playnumbers.model.entity.Activity.Type;
 import java.util.Random;
