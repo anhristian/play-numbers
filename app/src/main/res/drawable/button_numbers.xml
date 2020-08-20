@@ -7,39 +7,39 @@
 
   <item
     android:maxLevel="2"
-    android:drawable="@drawable/number_2"/>
+    android:drawable="@drawable/transp_2"/>
 
   <item
     android:maxLevel="3"
-    android:drawable="@drawable/number_3"/>
+    android:drawable="@drawable/transp_3"/>
 
   <item
     android:maxLevel="4"
-    android:drawable="@drawable/number_4"/>
+    android:drawable="@drawable/transp_4"/>
 
   <item
     android:maxLevel="5"
-    android:drawable="@drawable/number_5"/>
+    android:drawable="@drawable/transp_5"/>
 
   <item
     android:maxLevel="6"
-    android:drawable="@drawable/number_6"/>
+    android:drawable="@drawable/transp_6"/>
 
   <item
     android:maxLevel="7"
-    android:drawable="@drawable/number_7"/>
+    android:drawable="@drawable/transp_7"/>
 
   <item
     android:maxLevel="8"
-    android:drawable="@drawable/number_8"/>
+    android:drawable="@drawable/transp_8"/>
 
   <item
     android:maxLevel="9"
-    android:drawable="@drawable/number_9"/>
+    android:drawable="@drawable/transp_9"/>
 
   <item
     android:maxLevel="10"
-    android:drawable="@drawable/number_10"/>
+    android:drawable="@drawable/transp_10"/>
 
 
 

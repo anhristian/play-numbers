@@ -3,6 +3,7 @@ package edu.cnm.deepdive.playnumbers.viewmodel;
 import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import edu.cnm.deepdive.playnumbers.R;
 import edu.cnm.deepdive.playnumbers.model.fsm.NumberButton;
@@ -27,5 +28,8 @@ public class MatchingLowNumbersViewModel extends AndroidViewModel {
       buttons[i] = button;
     }
     numberButtons.setValue(buttons);
+  }
+  public LiveData<NumberButton[]> getNumberButtons() {
+    return numberButtons;
   }
 }
